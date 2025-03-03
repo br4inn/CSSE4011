@@ -1,0 +1,1627 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    message: |
+      The target system is: Generic - 4.1.0 - arm
+      The host system is: Linux - 5.15.167.4-microsoft-standard-WSL2 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /home/brain/repo/build/CMakeFiles/3.28.3/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/brain/repo/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1131 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineASMCompiler.cmake:131 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:134 (enable_language)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      arm-zephyr-eabi-gcc (Zephyr SDK 0.17.0) 12.2.0
+      Copyright (C) 2022 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:144 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-q3fHoD"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-q3fHoD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-q3fHoD'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_81985
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -o CMakeFiles/cmTC_81985.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-q3fHoD/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_81985.dir/src.c.obj -o cmTC_81985   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:35 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Z9btin"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Z9btin"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wall_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Z9btin'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_07957
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wall_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wall -o CMakeFiles/cmTC_07957.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Z9btin/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_07957.dir/src.c.obj -o cmTC_07957   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:35 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Xkm4At"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Xkm4At"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wformat__Wformat_security_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Xkm4At'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_96a3f
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wformat__Wformat_security_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wformat -Wformat-security -o CMakeFiles/cmTC_96a3f.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-Xkm4At/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_96a3f.dir/src.c.obj -o cmTC_96a3f   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:35 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-uJDPCj"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-uJDPCj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wformat__Wformat_zero_length_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-uJDPCj'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_448aa
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wformat__Wformat_zero_length_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wformat -Wformat-zero-length -o CMakeFiles/cmTC_448aa.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-uJDPCj/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_448aa.dir/src.c.obj -o cmTC_448aa   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:42 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-EdSiI7"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-EdSiI7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wdouble_promotion_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-EdSiI7'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_6861f
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wdouble_promotion_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wdouble-promotion -o CMakeFiles/cmTC_6861f.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-EdSiI7/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_6861f.dir/src.c.obj -o cmTC_6861f   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:44 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-8OFK3D"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-8OFK3D"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wpointer_sign_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-8OFK3D'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_83ae1
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wpointer_sign_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wpointer-sign -o CMakeFiles/cmTC_83ae1.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-8OFK3D/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_83ae1.dir/src.c.obj -o cmTC_83ae1   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:47 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-49Xv0v"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-49Xv0v"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wpointer_arith_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-49Xv0v'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_d86bb
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wpointer_arith_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wpointer-arith -o CMakeFiles/cmTC_d86bb.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-49Xv0v/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_d86bb.dir/src.c.obj -o cmTC_d86bb   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:50 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HpJvFM"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HpJvFM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HpJvFM'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_a9455
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wexpansion-to-defined -o CMakeFiles/cmTC_a9455.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HpJvFM/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_a9455.dir/src.c.obj -o cmTC_a9455   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:60 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-KK1AwX"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-KK1AwX"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wlogical_op_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-KK1AwX'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_c5a6a
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wlogical_op_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wlogical-op -o CMakeFiles/cmTC_c5a6a.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-KK1AwX/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_c5a6a.dir/src.c.obj -o cmTC_c5a6a   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:60 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-RXNGKO"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-RXNGKO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-RXNGKO'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_91460
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wmissing-field-initializers -o CMakeFiles/cmTC_91460.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-RXNGKO/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_91460.dir/src.c.obj -o cmTC_91460   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:76 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-g71iRQ"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-g71iRQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-g71iRQ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_430fe
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wpacked-bitfield-compat -o CMakeFiles/cmTC_430fe.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-g71iRQ/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_430fe.dir/src.c.obj -o cmTC_430fe   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:76 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-0ZjHIv"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-0ZjHIv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wvla_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-0ZjHIv'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_388a5
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wvla_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wvla -o CMakeFiles/cmTC_388a5.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-0ZjHIv/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_388a5.dir/src.c.obj -o cmTC_388a5   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:95 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OltkLt"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OltkLt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OltkLt'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_6bfd5
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Wunused-but-set-variable -o CMakeFiles/cmTC_6bfd5.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OltkLt/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_6bfd5.dir/src.c.obj -o cmTC_6bfd5   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:97 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HYri5t"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HYri5t"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_Werror_implicit_int_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HYri5t'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_3f979
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_Werror_implicit_int_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -Werror=implicit-int -o CMakeFiles/cmTC_3f979.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-HYri5t/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_3f979.dir/src.c.obj -o cmTC_3f979   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:124 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vN6K3z"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vN6K3z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_printf_return_value_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vN6K3z'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_fb68d
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fno_printf_return_value_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-printf-return-value -o CMakeFiles/cmTC_fb68d.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vN6K3z/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_fb68d.dir/src.c.obj -o cmTC_fb68d   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:182 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-3ol18O"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-3ol18O"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_mstack_protector_guard_global_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-3ol18O'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_16043
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_mstack_protector_guard_global_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -mstack-protector-guard=global -o CMakeFiles/cmTC_16043.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-3ol18O/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_16043.dir/src.c.obj -o cmTC_16043   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:200 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-U51Fhm"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-U51Fhm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_freestanding_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-U51Fhm'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_4c60e
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fno_freestanding_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-freestanding -o CMakeFiles/cmTC_4c60e.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-U51Fhm/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_4c60e.dir/src.c.obj -o cmTC_4c60e   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:203 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-VjrGJH"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-VjrGJH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_ffreestanding_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-VjrGJH'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_46624
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_ffreestanding_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -ffreestanding -o CMakeFiles/cmTC_46624.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-VjrGJH/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_46624.dir/src.c.obj -o cmTC_46624   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:219 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-gnSZjt"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-gnSZjt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_gdwarf_4_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-gnSZjt'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_72bca
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_gdwarf_4_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -gdwarf-4 -o CMakeFiles/cmTC_72bca.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-gnSZjt/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_72bca.dir/src.c.obj -o cmTC_72bca   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2579 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/compiler/gcc/compiler_flags.cmake:238 (check_set_compiler_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:42 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ROxrOX"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ROxrOX"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fdiagnostics_color_always_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ROxrOX'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_4c2fc
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fdiagnostics_color_always_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fdiagnostics-color=always -o CMakeFiles/cmTC_4c2fc.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ROxrOX/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_4c2fc.dir/src.c.obj -o cmTC_4c2fc   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:5 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-B6ZHJS"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-B6ZHJS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___gc_sections"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-B6ZHJS'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_8cfe0
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___gc_sections  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--gc-sections -o CMakeFiles/cmTC_8cfe0.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-B6ZHJS/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--gc-sections  CMakeFiles/cmTC_8cfe0.dir/src.c.obj -o cmTC_8cfe0   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:5 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-5XWNav"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-5XWNav"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___build_id_none"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-5XWNav'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b03e0
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___build_id_none  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--build-id=none -o CMakeFiles/cmTC_b03e0.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-5XWNav/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--build-id=none  CMakeFiles/cmTC_b03e0.dir/src.c.obj -o cmTC_b03e0   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-9iqdK1"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-9iqdK1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__nostdlib"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-9iqdK1'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_e55f0
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__nostdlib  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -nostdlib -o CMakeFiles/cmTC_e55f0.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-9iqdK1/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -nostdlib  CMakeFiles/cmTC_e55f0.dir/src.c.obj -o cmTC_e55f0   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-A12a05"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-A12a05"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__static"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-A12a05'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_d3cc6
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__static  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -static -o CMakeFiles/cmTC_d3cc6.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-A12a05/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -static  CMakeFiles/cmTC_d3cc6.dir/src.c.obj -o cmTC_d3cc6   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ojOwSA"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ojOwSA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__X"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ojOwSA'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_f0d61
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__X  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-X -o CMakeFiles/cmTC_f0d61.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ojOwSA/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-X  CMakeFiles/cmTC_f0d61.dir/src.c.obj -o cmTC_f0d61   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:10 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-xBeCVg"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-xBeCVg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__N"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-xBeCVg'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9cb02
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl__N  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-N -o CMakeFiles/cmTC_9cb02.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-xBeCVg/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,-N  CMakeFiles/cmTC_9cb02.dir/src.c.obj -o cmTC_9cb02   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:17 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-1WBK2y"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-1WBK2y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_warn"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-1WBK2y'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1a8cd
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_warn  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=warn -o CMakeFiles/cmTC_1a8cd.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-1WBK2y/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=warn  CMakeFiles/cmTC_1a8cd.dir/src.c.obj -o cmTC_1a8cd   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:21 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-MarFgM"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-MarFgM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_error"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-MarFgM'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0e711
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___orphan_handling_error  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=error -o CMakeFiles/cmTC_0e711.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-MarFgM/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--orphan-handling=error  CMakeFiles/cmTC_0e711.dir/src.c.obj -o cmTC_0e711   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:25 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-csKGNV"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-csKGNV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___print_memory_usage"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-csKGNV'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_4a47d
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___print_memory_usage  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--print-memory-usage -o CMakeFiles/cmTC_4a47d.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-csKGNV/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--print-memory-usage  CMakeFiles/cmTC_4a47d.dir/src.c.obj -o cmTC_4a47d   && :
+        Memory region         Used Size  Region Size  %age Used
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:41 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OqGBUm"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OqGBUm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___no_relax"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OqGBUm'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0391b
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___no_relax  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--no-relax -o CMakeFiles/cmTC_0391b.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-OqGBUm/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--no-relax  CMakeFiles/cmTC_0391b.dir/src.c.obj -o cmTC_0391b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:43 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TC7FWv"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TC7FWv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_common_descending"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TC7FWv'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_6a5fb
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_common_descending  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-common=descending -o CMakeFiles/cmTC_6a5fb.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TC7FWv/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-common=descending  CMakeFiles/cmTC_6a5fb.dir/src.c.obj -o cmTC_6a5fb   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:43 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TQQuoU"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TQQuoU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_section_alignment"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TQQuoU'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_c7aac
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__Wl___sort_section_alignment  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-section=alignment -o CMakeFiles/cmTC_c7aac.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-TQQuoU/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -Wl,--sort-section=alignment  CMakeFiles/cmTC_c7aac.dir/src.c.obj -o cmTC_c7aac   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2501 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/gcc/linker_flags.cmake:10 (check_set_linker_property)"
+      - "/home/brain/repo/zephyr/cmake/linker/ld/linker_flags.cmake:53 (include)"
+      - "/home/brain/repo/zephyr/cmake/target_toolchain_flags.cmake:43 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/kernel.cmake:148 (include)"
+      - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:4 (find_package)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vDLVSB"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vDLVSB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__pg"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vDLVSB'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_69537
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__pg  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -pg -o CMakeFiles/cmTC_69537.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-vDLVSB/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -pg  CMakeFiles/cmTC_69537.dir/src.c.obj -o cmTC_69537   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2379 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:164 (target_ld_options)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:383 (zephyr_ld_options)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zoRWmZ"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zoRWmZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__mcpu_cortex_m4__mthumb__mabi_aapcs__mfp16_format_ieee__mtp_soft__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zoRWmZ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_67bfd
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd__mcpu_cortex_m4__mthumb__mabi_aapcs__mfp16_format_ieee__mtp_soft__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft -fuse-ld=bfd -o CMakeFiles/cmTC_67bfd.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zoRWmZ/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft -fuse-ld=bfd  CMakeFiles/cmTC_67bfd.dir/src.c.obj -o cmTC_67bfd   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:484 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-hous0k"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-hous0k"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-hous0k'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_3553d
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-asynchronous-unwind-tables -o CMakeFiles/cmTC_3553d.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-hous0k/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_3553d.dir/src.c.obj -o cmTC_3553d   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:492 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-cAZr7z"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-cAZr7z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_ftls_model_local_exec_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-cAZr7z'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_6faa6
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_ftls_model_local_exec_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -ftls-model=local-exec -o CMakeFiles/cmTC_6faa6.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-cAZr7z/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_6faa6.dir/src.c.obj -o cmTC_6faa6   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:512 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-CO2P0X"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-CO2P0X"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_reorder_functions_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-CO2P0X'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_be874
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fno_reorder_functions_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-reorder-functions -o CMakeFiles/cmTC_be874.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-CO2P0X/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_be874.dir/src.c.obj -o cmTC_be874   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:519 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-iaNIQq"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-iaNIQq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check__param_min_pagesize_0_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-iaNIQq'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9967d
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck__param_min_pagesize_0_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   --param=min-pagesize=0 -o CMakeFiles/cmTC_9967d.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-iaNIQq/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_9967d.dir/src.c.obj -o cmTC_9967d   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:522 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-fPRDmB"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-fPRDmB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fno_defer_pop_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-fPRDmB'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_51e66
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fno_defer_pop_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fno-defer-pop -o CMakeFiles/cmTC_51e66.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-fPRDmB/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_51e66.dir/src.c.obj -o cmTC_51e66   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:541 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ixXOnz"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ixXOnz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map__home_brain_repo_mycode_apps_test_blinky_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ixXOnz'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_c21b1
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fmacro_prefix_map__home_brain_repo_mycode_apps_test_blinky_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=/home/brain/repo/mycode/apps/test/blinky=CMAKE_SOURCE_DIR -o CMakeFiles/cmTC_c21b1.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-ixXOnz/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_c21b1.dir/src.c.obj -o cmTC_c21b1   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:542 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-DPNkRs"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-DPNkRs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map__home_brain_repo_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-DPNkRs'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_97479
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fmacro_prefix_map__home_brain_repo_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=/home/brain/repo/zephyr=ZEPHYR_BASE -o CMakeFiles/cmTC_97479.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-DPNkRs/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_97479.dir/src.c.obj -o cmTC_97479   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/CMakeLists.txt:544 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zcCHG5"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zcCHG5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map__home_brain_repo_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zcCHG5'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b3e15
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fmacro_prefix_map__home_brain_repo_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=/home/brain/repo=WEST_TOPDIR -o CMakeFiles/cmTC_b3e15.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-zcCHG5/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_b3e15.dir/src.c.obj -o cmTC_b3e15   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/arch/common/CMakeLists.txt:40 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-N4BpaE"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-N4BpaE"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_ffunction_sections_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-N4BpaE'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_068b4
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_ffunction_sections_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -ffunction-sections -o CMakeFiles/cmTC_068b4.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-N4BpaE/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_068b4.dir/src.c.obj -o cmTC_068b4   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2318 (check_c_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:1177 (check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2357 (zephyr_check_compiler_flag)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:2333 (target_cc_option_fallback)"
+      - "/home/brain/repo/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/home/brain/repo/zephyr/arch/common/CMakeLists.txt:40 (zephyr_cc_option)"
+    directories:
+      source: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-tJBHa5"
+      binary: "/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-tJBHa5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/brain/repo/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fdata_sections_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-tJBHa5'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1d53b
+        [1/2] /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fdata_sections_C__nostartfiles__nostdlib__isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___home_brain_zephyr_install_zephyr_sdk_0_17_0_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fdata-sections -o CMakeFiles/cmTC_1d53b.dir/src.c.obj -c /home/brain/repo/build/CMakeFiles/CMakeScratch/TryCompile-tJBHa5/src.c
+        [2/2] : && /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_1d53b.dir/src.c.obj -o cmTC_1d53b   && :
+        
+      exitCode: 0
+...
