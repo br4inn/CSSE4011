@@ -125,6 +125,7 @@
 /home/brain/repo/build/zephyr/subsys/pm/policy/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/portability/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/portability/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/subsys/random/CMakeFiles/subsys__random.dir
 /home/brain/repo/build/zephyr/subsys/random/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/random/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/rtio/CMakeFiles/edit_cache.dir
@@ -170,6 +171,9 @@
 /home/brain/repo/build/zephyr/drivers/console/CMakeFiles/drivers__console.dir
 /home/brain/repo/build/zephyr/drivers/console/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/drivers/console/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/drivers/entropy/CMakeFiles/drivers__entropy.dir
+/home/brain/repo/build/zephyr/drivers/entropy/CMakeFiles/edit_cache.dir
+/home/brain/repo/build/zephyr/drivers/entropy/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/drivers/gpio/CMakeFiles/drivers__gpio.dir
 /home/brain/repo/build/zephyr/drivers/gpio/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/drivers/gpio/CMakeFiles/rebuild_cache.dir
