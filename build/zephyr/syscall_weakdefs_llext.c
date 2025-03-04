@@ -137,6 +137,8 @@ extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_reset_line_assert;
 extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_reset_line_deassert;
 extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_reset_line_toggle;
 extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_reset_status;
+extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_spi_release;
+extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_spi_transceive;
 extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_sys_clock_hw_cycles_per_sec_runtime_get;
 extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_sys_csrand_get;
 extern __weak ALIAS_OF(no_syscall_impl) void * const z_impl_sys_rand_get;

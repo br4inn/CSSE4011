@@ -1,7 +1,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h> 
 #include <zephyr/random/random.h>
-
+#include <stdio.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/sys/printk.h>
 
@@ -30,7 +30,7 @@ static const uint32_t colour_sequence[] = {
  
 void init_gpio()
 {
-    gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpioa));
+    gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpiod));
     
     gpio_pin_configure(gpio_dev, CI_PIN, GPIO_OUTPUT);
     gpio_pin_configure(gpio_dev, DI_PIN, GPIO_OUTPUT);
@@ -79,7 +79,7 @@ void rgb_thread(void) {
         green = (colour >> 8) & 0xFF;
         blue = colour & 0xFF;
     
-         printk("Current col - Red: %d, Green: %d, Blue: %d\n", red, green, blue);
+        printk("Current col - Red: %d, Green: %d, Blue: %d\n", red, green, blue);
 
         send_rgb_data(red, green, blue);
     }
