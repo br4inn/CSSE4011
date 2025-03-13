@@ -1,4 +1,4 @@
-# Install script for directory: /home/brain/repo/zephyr/subsys/shell/modules/kernel_service/thread
+# Install script for directory: /home/brain/repo/zephyr/drivers/entropy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

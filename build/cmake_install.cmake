@@ -1,4 +1,4 @@
-# Install script for directory: /home/brain/repo/mycode/apps/prac1/task3
+# Install script for directory: /home/brain/repo/mycode/apps/prac1/task1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
