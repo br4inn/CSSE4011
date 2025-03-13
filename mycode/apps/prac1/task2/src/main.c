@@ -35,21 +35,28 @@ int main(void) {
 
 void clk(void) {
     gpio_pin_set_dt(&ci, 0); // checked and is toggling
-    k_sleep(K_USEC(100));
+    k_usleep(20);
 
     gpio_pin_set_dt(&ci, 1); 
-    k_sleep(K_USEC(100));
+    k_usleep(20);
 }
 
 
 void send_byte(uint8_t byte){
-    for (uint8_t i = 0; i < 8; i++)
-    {
-        gpio_pin_set_dt(&di, (byte & 0x80) ? 1 : 0);
-        clk();
-        byte <<= 1;
-    }
     
+     // Send one bit at a time, starting with the MSB
+     for (uint8_t i=0; i<8; i++)
+     {
+         // If MSB is 1, write one and clock it, else write 0 and clock
+         if ((byte & 0x80) != 0)
+            gpio_pin_set_dt(&di, 1);
+         else
+            gpio_pin_set_dt(&di, 0);
+         clk();
+         printk("Sending byte %d\n",byte);
+         // Advance to the next bit to send
+         byte <<= 1;
+     }
 }
 
 K_MSGQ_DEFINE(colour_msgq, sizeof(uint32_t), 8, 4);
@@ -66,12 +73,30 @@ static const uint32_t colour_sequence[] = {
 };
 
 void send_rgb_data(uint8_t red, uint8_t green, uint8_t blue) {
-    printk("Sending Color - R: %d, G: %d, B: %d\n", red, green, blue);
-    
-    send_byte(0b11000000 | 0b00001111); // Start frame
+    printk("Sending Colour R: %d, G: %d, B: %d\n", red, green, blue);
+    send_byte(0x00);
+    send_byte(0x00);
+    send_byte(0x00);
+    send_byte(0x00);
+     
+
+    uint8_t prefix = 0b11000000;
+    if ((blue & 0x80) == 0)     prefix|= 0b00100000;
+    if ((blue & 0x40) == 0)     prefix|= 0b00010000; 
+    if ((green & 0x80) == 0)    prefix|= 0b00001000;
+    if ((green & 0x40) == 0)    prefix|= 0b00000100;
+    if ((red & 0x80) == 0)      prefix|= 0b00000010;
+    if ((red & 0x40) == 0)      prefix|= 0b00000001;
+    send_byte(prefix);
+
     send_byte(blue);  // Blue
     send_byte(green); // Green
     send_byte(red);   // Red 
+
+    send_byte(0x00);
+    send_byte(0x00);
+    send_byte(0x00);
+    send_byte(0x00);
 
     
 

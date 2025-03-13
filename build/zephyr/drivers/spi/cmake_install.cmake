@@ -1,4 +1,4 @@
-# Install script for directory: /home/brain/repo/zephyr/subsys/logging
+# Install script for directory: /home/brain/repo/zephyr/drivers/spi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/brain/repo/build/zephyr/subsys/logging/backends/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/brain/repo/build/zephyr/subsys/logging/frontends/cmake_install.cmake")
+  include("/home/brain/repo/build/zephyr/drivers/spi/spi_nxp_lpspi/cmake_install.cmake")
 endif()
 
