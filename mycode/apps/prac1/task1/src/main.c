@@ -9,17 +9,16 @@
 struct k_poll_signal sig;
 uint16_t random_num;
 
-void random_number_generate(void *p1, void *p2, void *p3)  {
+void random_number_generate(void)  {
     printk("RNG Thread started\n");
     while (1) {
-        random_num = sys_rand16_get();
-        printk("Generated: %08u\n", random_num);
+        random_num = sys_rand16_get(); 
         k_poll_signal_raise(&sig, 0);   
         k_sleep(K_SECONDS(2));
     }
 }
 
-void display(void *p1, void *p2, void *p3) {
+void display(void) {
  //   k_poll_signal_init(&sig);  // Init the signal
     printk("Display Thread started\n");
 
@@ -39,8 +38,9 @@ void display(void *p1, void *p2, void *p3) {
     }
 }
 
-void main(void) {
+int main(void) {
     k_poll_signal_init(&sig);   
+    return 0;
 }
 
 K_THREAD_DEFINE(rng_id, STACK_SIZE, random_number_generate, NULL, NULL, NULL, RNG_PRIORITY, 0, 0);

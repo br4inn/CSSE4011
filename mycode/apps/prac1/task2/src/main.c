@@ -43,18 +43,15 @@ void clk(void) {
 
 
 void send_byte(uint8_t byte){
-    
-     // Send one bit at a time, starting with the MSB
+     
      for (uint8_t i=0; i<8; i++)
-     {
-         // If MSB is 1, write one and clock it, else write 0 and clock
+     { 
          if ((byte & 0x80) != 0)
             gpio_pin_set_dt(&di, 1);
          else
             gpio_pin_set_dt(&di, 0);
          clk();
-         printk("Sending byte %d\n",byte);
-         // Advance to the next bit to send
+   
          byte <<= 1;
      }
 }

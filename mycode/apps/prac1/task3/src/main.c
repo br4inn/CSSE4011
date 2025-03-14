@@ -45,7 +45,7 @@ static int cmd_time(const struct shell *shell, size_t argc, char **argv) {
 
 SHELL_CMD_REGISTER(time, NULL, "'time f' for formatted time", cmd_time);
 
-void led_thread(void *arg1, void *arg2, void *arg3) {
+void led_thread(void) {
     bool led0_state = false;  
     bool led1_state = false;
 
