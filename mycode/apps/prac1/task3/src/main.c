@@ -117,7 +117,7 @@ static int cmd_led(const struct shell *shell, size_t argc, char **argv) {
     return 0;
 }
 
-SHELL_CMD_REGISTER(led, NULL, "Control LEDs (s=Set, t=Toggle)", cmd_led);
+SHELL_CMD_REGISTER(led, NULL, "LED functionality (s=Set, t=Toggle)", cmd_led);
 
 int main(void) {
     if (!gpio_is_ready_dt(&led0) || !gpio_is_ready_dt(&led1)) {
@@ -127,12 +127,10 @@ int main(void) {
 
     gpio_pin_configure_dt(&led0, GPIO_OUTPUT_ACTIVE);
     gpio_pin_configure_dt(&led1, GPIO_OUTPUT_ACTIVE);
-    LOG_INF("LEDs initialized");
+    LOG_INF("LEDs init");
 
     k_thread_create(&led_thread_data, led_thread_stack, K_THREAD_STACK_SIZEOF(led_thread_stack), led_thread,
                     NULL, NULL, NULL, THREAD_PRIORITY, 0, K_NO_WAIT);
-
-    LOG_INF("LED thread started");
-
+ 
     return 0;
 }

@@ -9,8 +9,7 @@
 struct k_poll_signal sig;
 uint16_t random_num;
 
-void random_number_generate(void)  {
-    printk("RNG Thread started\n");
+void random_number_generate(void)  { 
     while (1) {
         random_num = sys_rand16_get(); 
         k_poll_signal_raise(&sig, 0);   
@@ -19,8 +18,7 @@ void random_number_generate(void)  {
 }
 
 void display(void) {
- //   k_poll_signal_init(&sig);  // Init the signal
-    printk("Display Thread started\n");
+ //   k_poll_signal_init(&sig);  // Init the signal 
 
     struct k_poll_event events[1] = {
         K_POLL_EVENT_INITIALIZER(K_POLL_TYPE_SIGNAL, K_POLL_MODE_NOTIFY_ONLY, &sig),

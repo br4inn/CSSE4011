@@ -86,9 +86,9 @@ void send_rgb_data(uint8_t red, uint8_t green, uint8_t blue) {
     if ((red & 0x40) == 0)      prefix|= 0b00000001;
     send_byte(prefix);
 
-    send_byte(blue);  // Blue
-    send_byte(green); // Green
-    send_byte(red);   // Red 
+    send_byte(blue);  
+    send_byte(green);  
+    send_byte(red);   
 
     send_byte(0x00);
     send_byte(0x00);

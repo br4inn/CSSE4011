@@ -10,3 +10,5 @@ This task involves controlling an RGB LED to display the 8 primary colors every 
 
 2 - Flash using  west flash --runner jlink
  
+## References 
+- chainable LED https://github.com/pjpmarques/ChainableLED/blob/master/ChainableLED.cpp
