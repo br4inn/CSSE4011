@@ -113,10 +113,7 @@ static int cmd_led(const struct shell *shell, size_t argc, char **argv) {
         return -EINVAL;
     }
 
-    k_sem_give(&led_sem);  // Signal the LED thread
-    //shell_print(shell, "Command sent: %c %s", led_command, argv[2]);
-   // LOG_INF("LED command send:  %c, bitmask: %s", led_command, argv[2]);
-
+    k_sem_give(&led_sem);  // Signal the LED thread 
     return 0;
 }
 
