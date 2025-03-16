@@ -28,8 +28,6 @@
 		volt-sensor0 = &vref;
 		volt-sensor1 = &vbat;
 		die-temp0 = &die_temp;
-		di-led = &di_led;
-		ci-led = &ci_led;
 	};
 	soc {
 		#address-cells = < 0x1 >;
@@ -1068,14 +1066,6 @@
 		green_led_2: led_2 {
 			gpios = < &gpiob 0xe 0x0 >;
 			label = "User LD2";
-		};
-		di_led: di {
-			gpios = < &gpiob 0x2 0x0 >;
-			label = "DI";
-		};
-		ci_led: ci {
-			gpios = < &gpioa 0x4 0x0 >;
-			label = "CI";
 		};
 	};
 	gpio_keys {

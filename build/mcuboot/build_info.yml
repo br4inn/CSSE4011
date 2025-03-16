@@ -12,11 +12,11 @@ cmake:
     bindings-dirs:
      - /home/brain/repo/zephyr/dts/bindings
     extra-user-files:
-     - /home/brain/repo/mycode/apps/prac1/task2/boards/disco_l475_iot1.overlay
+     - /home/brain/repo/mycode/apps/prac1/task3/boards/disco_l475_iot1.overlay
     files:
      - /home/brain/repo/zephyr/boards/st/disco_l475_iot1/disco_l475_iot1.dts
      - /home/brain/repo/bootloader/mcuboot/boot/zephyr/app.overlay
-     - /home/brain/repo/mycode/apps/prac1/task2/boards/disco_l475_iot1.overlay
+     - /home/brain/repo/mycode/apps/prac1/task3/boards/disco_l475_iot1.overlay
     include-dirs:
      - /home/brain/repo/modules/hal/atmel/include
      - /home/brain/repo/modules/hal/gigadevice/include
@@ -43,12 +43,12 @@ cmake:
      - /home/brain/repo/bootloader/mcuboot/boot/zephyr/app.overlay
   kconfig:
     extra-user-files:
-     - /home/brain/repo/mycode/apps/prac1/task2/sysbuild/mcuboot.conf
+     - /home/brain/repo/mycode/apps/prac1/task3/sysbuild/mcuboot.conf
     files:
      - /home/brain/repo/zephyr/boards/st/disco_l475_iot1/disco_l475_iot1_defconfig
      - /home/brain/repo/bootloader/mcuboot/boot/zephyr/prj.conf
      - /home/brain/repo/bootloader/mcuboot/boot/zephyr/boards/disco_l475_iot1_stm32l475xx.conf
-     - /home/brain/repo/mycode/apps/prac1/task2/sysbuild/mcuboot.conf
+     - /home/brain/repo/mycode/apps/prac1/task3/sysbuild/mcuboot.conf
      - /home/brain/repo/build/mcuboot/zephyr/.config.sysbuild
     user-files:
      - /home/brain/repo/bootloader/mcuboot/boot/zephyr/prj.conf

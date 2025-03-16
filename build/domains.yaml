@@ -1,10 +1,10 @@
-default: task2
+default: task3
 build_dir: /home/brain/repo/build
 domains:
-  - name: task2
-    build_dir: /home/brain/repo/build/task2
+  - name: task3
+    build_dir: /home/brain/repo/build/task3
   - name: mcuboot
     build_dir: /home/brain/repo/build/mcuboot
 flash_order:
   - mcuboot
-  - task2
+  - task3

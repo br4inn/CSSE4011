@@ -9,14 +9,14 @@
 /home/brain/repo/build/_sysbuild/CMakeFiles/build_info_yaml_saved.dir
 /home/brain/repo/build/_sysbuild/CMakeFiles/mcuboot_cache.dir
 /home/brain/repo/build/_sysbuild/CMakeFiles/mcuboot_extra_byproducts.dir
-/home/brain/repo/build/_sysbuild/CMakeFiles/task2_cache.dir
-/home/brain/repo/build/_sysbuild/CMakeFiles/task2_extra_byproducts.dir
+/home/brain/repo/build/_sysbuild/CMakeFiles/task3_cache.dir
+/home/brain/repo/build/_sysbuild/CMakeFiles/task3_extra_byproducts.dir
 /home/brain/repo/build/_sysbuild/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/_sysbuild/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/menuconfig.dir
 /home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/hardenconfig.dir
 /home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/guiconfig.dir
-/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/task2.dir
+/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/task3.dir
 /home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot_menuconfig.dir

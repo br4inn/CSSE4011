@@ -21,7 +21,7 @@ APPLICATION_BINARY_DIR:PATH=/home/brain/repo/build
 APPLICATION_SOURCE_DIR:PATH=/home/brain/repo/zephyr/share/sysbuild/template
 
 //No help, variable specified on the command line.
-APP_DIR:PATH=/home/brain/repo/mycode/apps/prac1/task2
+APP_DIR:PATH=/home/brain/repo/mycode/apps/prac1/task3
 
 //Selected board
 BOARD:STRING=disco_l475_iot1
@@ -80,7 +80,7 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //   These settings will override the settings in the application’s
 // SYSBuild config file or its   default .conf file. Multiple files
 // may be listed, e.g. SB_CONF_FILE="sys1.conf sys2.conf"
-SB_CONF_FILE:STRING=/home/brain/repo/mycode/apps/prac1/task2/sysbuild.conf
+SB_CONF_FILE:STRING=/home/brain/repo/mycode/apps/prac1/task3/sysbuild.conf
 
 //No help, variable specified on the command line.
 WEST_PYTHON:UNINITIALIZED=/home/brain/zephyr_install/env/bin/python3
@@ -92,7 +92,7 @@ ZEPHYR_BASE:PATH=/home/brain/repo/zephyr
 Zephyr_DIR:PATH=/home/brain/repo/zephyr/share/zephyr-package/cmake
 
 //No help, variable specified on the command line.
-mcuboot_EXTRA_DTC_OVERLAY_FILE:UNINITIALIZED=/home/brain/repo/mycode/apps/prac1/task2/boards/disco_l475_iot1.overlay
+mcuboot_EXTRA_DTC_OVERLAY_FILE:UNINITIALIZED=/home/brain/repo/mycode/apps/prac1/task3/boards/disco_l475_iot1.overlay
 
 //Value Computed by CMake
 sysbuild_BINARY_DIR:STATIC=/home/brain/repo/build/_sysbuild
@@ -187,5 +187,5 @@ _Python3_INTERPRETER_SIGNATURE:INTERNAL=c7b0a115623de6a0290dd19316fe59ff
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 //Kconfig fragment defined by main application
-mcuboot_EXTRA_CONF_FILE:INTERNAL=/home/brain/repo/mycode/apps/prac1/task2/sysbuild/mcuboot.conf
+mcuboot_EXTRA_CONF_FILE:INTERNAL=/home/brain/repo/mycode/apps/prac1/task3/sysbuild/mcuboot.conf
 

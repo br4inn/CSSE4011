@@ -3630,29 +3630,7 @@ zephyr_udc0: &usbotg_fs {
  };
 };
 # 0 "<command-line>" 2
-# 1 "/home/brain/repo/mycode/apps/prac1/task2/boards/disco_l475_iot1.overlay" 1
-/ {
-
-
-    aliases {
-        di-led = &di_led;
-        ci-led = &ci_led;
-    };
-
-    leds {
-        compatible = "gpio-leds";
-        di_led: di {
-            gpios = <&gpiob 2 (0 << 0)>;
-            label = "DI";
-        };
-
-        ci_led: ci {
-            gpios = <&gpioa 4 (0 << 0)>;
-            label = "CI";
-        };
-    };
-};
-
+# 1 "/home/brain/repo/mycode/apps/prac1/task3/boards/disco_l475_iot1.overlay" 1
 
 /delete-node/ &slot1_partition;
 /delete-node/ &slot2_partition;

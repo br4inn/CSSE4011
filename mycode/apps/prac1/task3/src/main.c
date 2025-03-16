@@ -100,8 +100,7 @@ struct k_thread led_thread_data;
 
 static int cmd_led(const struct shell *shell, size_t argc, char **argv) {
     if (argc != 3) {
-        LOG_ERR("Invalid command usage");
-        return -EINVAL;
+        LOG_ERR("Invalid command usage"); 
     }
 
     led_command = argv[1][0];
@@ -109,8 +108,7 @@ static int cmd_led(const struct shell *shell, size_t argc, char **argv) {
 
     if (led_command != 's' && led_command != 't') {
         shell_error(shell, "Invalid command");
-        LOG_ERR("Invalid LED command");
-        return -EINVAL;
+        LOG_ERR("Invalid LED command"); 
     }
 
     k_sem_give(&led_sem);  // Signal the LED thread 
@@ -121,8 +119,7 @@ SHELL_CMD_REGISTER(led, NULL, "LED functionality (s=Set, t=Toggle)", cmd_led);
 
 int main(void) {
     if (!gpio_is_ready_dt(&led0) || !gpio_is_ready_dt(&led1)) {
-        LOG_ERR("GPIO not ready");
-        return -ENODEV;
+        LOG_ERR("GPIO not ready"); 
     }
 
     gpio_pin_configure_dt(&led0, GPIO_OUTPUT_ACTIVE);
