@@ -1,1 +1,0 @@
-"mcuboot":"/home/brain/repo/bootloader/mcuboot":"/home/brain/repo/bootloader/mcuboot/boot/zephyr/sysbuild"

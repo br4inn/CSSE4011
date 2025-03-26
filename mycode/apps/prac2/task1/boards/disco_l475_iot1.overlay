@@ -1,0 +1,12 @@
+
+&hts221 {
+    status = "okay";
+};
+
+&lps22hb {
+    status = "okay";
+};
+
+&lis3mdl {
+    status = "okay";
+};

@@ -6,10 +6,29 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: sysbuild_toplevel
+# Project: prac2
 # Configurations: 
 # =============================================================================
 # =============================================================================
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__app_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__app_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
 
 #############################################
 # Rule for running custom commands.
@@ -20,12 +39,715 @@ rule CUSTOM_COMMAND
 
 
 #############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__zephyr_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__zephyr_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__offsets_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__zephyr_pre0_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C executable.
+
+rule C_EXECUTABLE_LINKER__zephyr_pre0_
+  command = $PRE_LINK && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES -L"/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/thumb/v7e-m/nofp" -lc -lgcc && $POST_BUILD
+  description = Linking C executable $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__zephyr_final_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C executable.
+
+rule C_EXECUTABLE_LINKER__zephyr_final_
+  command = $PRE_LINK && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES -L"/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/thumb/v7e-m/nofp" -lc -lgcc && $POST_BUILD
+  description = Linking C executable $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__arch__common_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__arch__common_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__isr_tables_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__isr_tables_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling ASM files.
+
+rule ASM_COMPILER__arch__arm__core_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building ASM object $out
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__arch__arm__core_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__arch__arm__core_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling ASM files.
+
+rule ASM_COMPILER__arch__arm__core__cortex_m_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building ASM object $out
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__arch__arm__core__cortex_m_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__arch__arm__core__cortex_m_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__arch__arm__core__mpu_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__arch__arm__core__mpu_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__lib__libc__picolibc_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__lib__libc__picolibc_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__lib__libc__common_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__lib__libc__common_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__lib__posix__options_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__lib__posix__options_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__interrupt_controller_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__interrupt_controller_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__adc_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__adc_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__clock_control_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__clock_control_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__console_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__console_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__gpio_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__gpio_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__i2c_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__i2c_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__pinctrl_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__pinctrl_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__reset_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__reset_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__rtc_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__rtc_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__stmemsc_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__stmemsc_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__hts221_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__hts221_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__lis3mdl_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lis3mdl_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__lps22hb_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lps22hb_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__lsm6dsl_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lsm6dsl_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__stm32_temp_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__stm32_temp_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__stm32_vbat_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__stm32_vbat_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__stm32_vref_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__stm32_vref_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__sensor__st__vl53l0x_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__vl53l0x_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__serial_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__serial_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__timer_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__timer_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__.2e.2e__modules__hal__st_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__.2e.2e__modules__hal__st_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__.2e.2e__modules__hal__stm32__stm32cube_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__.2e.2e__modules__hal__stm32__stm32cube_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__kernel_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache ${LAUNCHER}${CODE_CHECK}/home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__kernel_
+  command = $PRE_LINK && ccache /usr/bin/cmake -E rm -f $TARGET_FILE && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/brain/repo/zephyr/share/sysbuild -B/home/brain/repo/build
+  command = /usr/bin/cmake --regenerate-during-build -S/home/brain/repo/mycode/apps/prac2/task1 -B/home/brain/repo/build
   description = Re-running CMake...
   generator = 1
+
+
+#############################################
+# Rule for cleaning additional files.
+
+rule CLEAN_ADDITIONAL
+  command = /usr/bin/cmake -DCONFIG=$CONFIG -P CMakeFiles/clean_additional.cmake
+  description = Cleaning additional files...
 
 
 #############################################
