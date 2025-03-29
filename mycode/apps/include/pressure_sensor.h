@@ -6,12 +6,9 @@
 #include <zephyr/logging/log.h>
 
 
-#ifndef TEMP_HUMIDITY_SENSOR_H
-#define TEMP_HUMIDITY_SENSOR_H
+#ifndef PRESSURE_SENSOR_H
+#define PRESSURE_SENSOR_H
 
-void read_temp();
-void read_hum();
-void hts221_handler(const struct sensor_trigger *trig);
-void process_sample();
+void read_pressure();
 
 #endif  

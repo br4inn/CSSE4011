@@ -3624,5 +3624,41 @@ zephyr_udc0: &usbotg_fs {
 };
 # 0 "<command-line>" 2
 # 1 "/home/brain/repo/mycode/apps/prac2/task1/boards/disco_l475_iot1.overlay" 1
+
+&i2c2 {
+    hts221@5f {
+        compatible = "st,hts221";
+        reg = <0x5f>;
+        status = "okay";
+    };
+
+    lps22hb-press@5d {
+        compatible = "st,lps22hb-press";
+        reg = <0x5d>;
+        status = "okay";
+    };
+
+    lis3mdl-magn@1e {
+        compatible = "st,lis3mdl-magn";
+        reg = <0x1e>;
+        status = "okay";
+    };
+};
+
+
+/ {
+ aliases {
+  rtc = &rtc;
+ };
+};
+
+&rtc {
+    status = "okay";
+};
+
+
+&i2c2 {
+    status = "okay";
+};
 # 0 "<command-line>" 2
 # 1 "/home/brain/repo/zephyr/misc/empty_file.c"

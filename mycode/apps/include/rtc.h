@@ -9,7 +9,7 @@
 #ifndef RTC_H
 #define RTC_H
 
-
-int rtc_init(void);
-int set_time(int hour, int min, int sec); 
+int set_rtc(int year, int month, int day, int hour, int min, int sec);
+int set_date_time(const struct device *rtc, int year, int month, int day, int hour, int min, int sec);
+int get_date_time(void);
 #endif // RTC_H

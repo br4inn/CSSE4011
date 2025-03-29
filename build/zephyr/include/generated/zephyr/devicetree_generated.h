@@ -14659,6 +14659,20 @@
 #define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_reg_IDX_0_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_reg_IDX_0 95
 #define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_reg_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status "okay"
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_STRING_UNQUOTED okay
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_STRING_TOKEN okay
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_STRING_UPPER_TOKEN OKAY
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_IDX_0 "okay"
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_IDX_0_ENUM_IDX 1
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_IDX_0_ENUM_VAL_okay_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_i2c_40005800_S_hts221_5f, status, 0)
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_i2c_40005800_S_hts221_5f, status, 0)
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_i2c_40005800_S_hts221_5f, status, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_i2c_40005800_S_hts221_5f, status, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_LEN 1
+#define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_status_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_compatible {"st,hts221"}
 #define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_compatible_IDX_0_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_hts221_5f_P_compatible_IDX_0 "st,hts221"
@@ -14776,6 +14790,20 @@
 #define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_PINCTRL_NUM 0
 
 /* Generic property macros: */
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status "okay"
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_STRING_UNQUOTED okay
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_STRING_TOKEN okay
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_STRING_UPPER_TOKEN OKAY
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_IDX_0 "okay"
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_IDX_0_ENUM_IDX 1
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_IDX_0_ENUM_VAL_okay_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e, status, 0)
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e, status, 0)
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e, status, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e, status, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_LEN 1
+#define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_status_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_compatible {"st,lis3mdl-magn"}
 #define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_compatible_IDX_0_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_lis3mdl_magn_1e_P_compatible_IDX_0 "st,lis3mdl-magn"
@@ -14885,6 +14913,20 @@
 #define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_PINCTRL_NUM 0
 
 /* Generic property macros: */
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status "okay"
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_STRING_UNQUOTED okay
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_STRING_TOKEN okay
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_STRING_UPPER_TOKEN OKAY
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_IDX_0 "okay"
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_IDX_0_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_IDX_0_ENUM_IDX 1
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_IDX_0_ENUM_VAL_okay_EXISTS 1
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d, status, 0)
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d, status, 0)
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d, status, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d, status, 0, __VA_ARGS__)
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_LEN 1
+#define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_status_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_compatible {"st,lps22hb-press"}
 #define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_compatible_IDX_0_EXISTS 1
 #define DT_N_S_soc_S_i2c_40005800_S_lps22hb_press_5d_P_compatible_IDX_0 "st,lps22hb-press"
@@ -16120,6 +16162,7 @@
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_S_rtc_40002800_EXISTS 1
+#define DT_N_ALIAS_rtc           DT_N_S_soc_S_rtc_40002800
 #define DT_N_INST_0_st_stm32_rtc DT_N_S_soc_S_rtc_40002800
 #define DT_N_NODELABEL_rtc       DT_N_S_soc_S_rtc_40002800
 
