@@ -1,8 +1,13 @@
 #include "rtc.h"
+
+#include <zephyr/logging/log.h>
 //static const struct device *dev;
 
-
+ 
+//LOG_MODULE_REGISTER(rtc, LOG_LEVEL_DBG);
+LOG_MODULE_REGISTER(rtc, LOG_LEVEL_DBG);
 const struct device *const rtc = DEVICE_DT_GET(DT_ALIAS(rtc));
+
 
 int set_date_time(const struct device *rtc, int year, int month, int day, int hour, int min, int sec) {
     int ret = 0;
@@ -17,7 +22,7 @@ int set_date_time(const struct device *rtc, int year, int month, int day, int ho
 
     ret = rtc_set_time(rtc, &tm);
     if (ret < 0) {
-        printk("Cannot write date time: %d\n", ret);
+        LOG_INF("Cannot write date time: %d\n", ret);
         return ret;
     }
     return ret;
@@ -29,19 +34,41 @@ int get_date_time(void)
 	struct rtc_time tm;
 
 	ret = rtc_get_time(rtc, &tm);
-	if (ret < 0) {
-		printk("Cannot read date time: %d\n", ret);
-		return ret;
-	}
+    if (ret < 0) {
+        LOG_INF("setting default time\n");
 
-	printk("RTC date and time: %04d-%02d-%02d %02d:%02d:%02d\n", tm.tm_year + 1900,
-	       tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
+        // Set default 
+        set_date_time(rtc, 2025, 1, 1, 0, 0, 0);
 
-	return ret;
+        // Retry getting the time
+        ret = rtc_get_time(rtc, &tm);
+        if (ret < 0) {
+            LOG_INF("Cannot read date time even after setting default: %d\n", ret);
+            return ret;
+        }
+    }
+    LOG_INF("RTC date and time: %04d-%02d-%02d %02d:%02d:%02d\n",
+        tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+        tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+    return ret;
 }
+// 	if (ret < 0) {
+// 		printk("Cannot read date time: %d\n", ret);
+// 		return ret;
+// 	}
+
+// 	printk("remove print RTC date and time: %04d-%02d-%02d %02d:%02d:%02d\n", tm.tm_year + 1900,
+// 	       tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
+//  //       LOG_INF("remove print RTC date and time: %04d-%02d-%02d %02d:%02d:%02d\n", tm.tm_year + 1900,
+//    //         tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
+         
+// 	return ret;
+// }
 
 
 int set_rtc(int year, int month, int day, int hour, int min, int sec) {
+ 
 
     if (!device_is_ready(rtc)) {
 		printk("Device is not ready\n");
@@ -68,12 +95,7 @@ int set_rtc(int year, int month, int day, int hour, int min, int sec) {
 // 		k_sleep(K_MSEC(1000));
 // 	};
 // 	return 0;
-// }
-
-
-
-LOG_MODULE_REGISTER(rtc_module, LOG_LEVEL_DBG);
-
+// } 
 
 // int rtc_init(void) {
 //     dev = DEVICE_DT_GET(DT_INST(0, st_stm32_rtc)); //board uses stm32

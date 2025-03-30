@@ -10,5 +10,5 @@
 #define MAG_SENSOR_H
 
 void read_mag();
-
+void read_mag_continous();
 #endif  

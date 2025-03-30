@@ -10,5 +10,6 @@
 #define PRESSURE_SENSOR_H
 
 void read_pressure();
+void read_pressure_continous();
 
 #endif  
