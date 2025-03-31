@@ -16,5 +16,6 @@ void process_sample();
 void read_temp_continous();
 void read_hum_continous();
 int get_latest_temp_val(int *temp_value);
+int get_latest_hum_val(int *hum_val);
 
 #endif  

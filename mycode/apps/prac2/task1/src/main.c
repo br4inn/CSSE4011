@@ -20,18 +20,28 @@
 K_THREAD_STACK_DEFINE(sampling_thread_stack, SAMPLING_THREAD_STACK_SIZE);
 static struct k_thread sampling_thread_data;
 
+#define JSON_THREAD_STACK_SIZE 1024
+K_THREAD_STACK_DEFINE(json_thread_stack, JSON_THREAD_STACK_SIZE);
+static struct k_thread temp_json_thread_data;
+static struct k_thread hum_json_thread_data;
+
+
 K_THREAD_STACK_DEFINE(temp_thread_stack, SENSOR_STACK_SIZE);
 K_THREAD_STACK_DEFINE(hum_thread_stack, SENSOR_STACK_SIZE);
 K_THREAD_STACK_DEFINE(pressure_thread_stack, SENSOR_STACK_SIZE);
 K_THREAD_STACK_DEFINE(mag_thread_stack, SENSOR_STACK_SIZE);
-
-// Define separate thread data for each sensor
+ 
 static struct k_thread temp_thread_data;
 static struct k_thread hum_thread_data;
 static struct k_thread pressure_thread_data;
 static struct k_thread mag_thread_data;
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
+
+#include <zephyr/sys/mutex.h>
+
+int global_sampling_rate = 2000; // Default  
+struct k_mutex sampling_rate_mutex;
 
 // Define the message queue
 //K_MSGQ_DEFINE(sampling_rate_msgq, MSGQ_MSG_SIZE, MSGQ_MAX_MSGS, 4);
@@ -48,50 +58,183 @@ extern void read_hum_continous();
 extern void read_pressure_continous();
 extern void read_mag_continous();
 extern int set_rtc(int year, int month, int day, int hour, int min, int sec);
-extern int get_date_time(void);
+//extern int get_date_time(void);
+extern const char *get_date_time(void);
+extern int get_latest_hum_val(int *hum_val);
 
 extern int get_latest_temp_val(int *temp_value);
+static int generate_temp_json(const char *did, const char *rtc_time, int value);
+struct sampling {
+    const char *did;
+    const char *rtc_time;
+    int value;
+};
+
+static const struct json_obj_descr sampling_descr[] = {
+    JSON_OBJ_DESCR_PRIM(struct sampling, did, JSON_TOK_STRING),
+    JSON_OBJ_DESCR_PRIM(struct sampling, rtc_time, JSON_TOK_STRING),
+    JSON_OBJ_DESCR_PRIM(struct sampling, value, JSON_TOK_NUMBER),
+};
 
 
+// void json_generation_thread(void *arg1) {
 
-// static const struct json_obj_descr sampling_descr[] = {
-//     JSON_OBJ_DESCR_PRIM(struct sampling, did, JSON_TOK_STRING),
-//     JSON_OBJ_DESCR_PRIM(struct sampling, rtc_time, JSON_TOK_NUMBER),
-//     JSON_OBJ_DESCR_PRIM(struct sampling, value, JSON_TOK_NUMBER),
-// };
+//     struct sampling *sampling_data = (struct sampling *)arg1; // Retrieve the sampling_data struct
+//     int value;
+//     int sampling_rate = 2000;
 
-// static const struct json_obj_descr sampling_ctl_descr = {
-//     JSON_OBJ_DESCR_PRIM(sampling_ctl, ctn_sampling_on, JSON_TOK_TRUE),
-//     JSON_OBJ_DESCR_PRIM(sampling_ctl, ctn_temp_sampling_on, JSON_TOK_TRUE),
-//     JSON_OBJ_DESCR_PRIM(sampling_ctl, ctn_hum_sampling_on, JSON_TOK_TRUE),
-//     JSON_OBJ_DESCR_PRIM(sampling_ctl, ctn_pressure_sampling_on, JSON_TOK_TRUE),
-//     JSON_OBJ_DESCR_PRIM(sampling_ctl, ctn_mag_sampling_on, JSON_TOK_TRUE),
-//   //  JSON_OBJ_DESCR_ARRAY(sampling_ctl, sampling_val, sampling_descr),
-// };
+//    // LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
 
-//struct sampling_ctl sampling_settings;
+//     // Check the appropriate sampling flag based on the DID
+//     while ((strcmp(sampling_data->did, "0") == 0 && sampling_settings.ctn_temp_sampling_on) ||
+//            (strcmp(sampling_data->did, "1") == 0 && sampling_settings.ctn_hum_sampling_on)) {
+//         int new_rate;
+//         if (k_msgq_get(&sampling_rate_msgq, &new_rate, K_NO_WAIT) == 0) {
+//             sampling_rate = new_rate;
+//             LOG_INF("Updated sampling rate: %d ms", sampling_rate);
+//         }
 
-// static int json(const char *did, double *values, size_t value_count) {
-//     char str[64];
-
-//     int ret = json_obj_parse(str, sizeof(str),
-//     sampling_ctl_descr, &sampling_settings);
-
-//     if (ret < 0) {
-//         LOG_ERR("JSON Parse error %d", ret);
-//         return ret;
-//     } else {
-//         LOG_INF("json_obj_parse return code: %d", ret);
+//         if (strcmp(sampling_data->did, "0") == 0) {
+//             if (get_latest_temp_val(&value) == 0) {
+//                 const char *datetime_str = get_date_time();
+//                 generate_temp_json(sampling_data->did, datetime_str, value);
+//             } else {
+//           //      LOG_ERR("No temperature values available for JSON generation");
+//             }
+//         } else if (strcmp(sampling_data->did, "1") == 0) {
+//             if (get_latest_hum_val(&value) == 0) {
+//                 const char *datetime_str = get_date_time();
+//                 generate_temp_json(sampling_data->did, datetime_str, value);
+//             } else {
+//          //       LOG_ERR("No humidity values available for JSON generation");
+//             }
+//         }
         
-
-//         LOG_INF(str);
+//         k_sleep(K_MSEC(sampling_rate));
 //     }
 
+//  //   LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
 
+//     // Free the sampling_data struct
+//     k_free(sampling_data);
 // }
 
+
+void json_generation_thread(void *arg1) {
+    struct sampling *sampling_data = (struct sampling *)arg1; // Retrieve the sampling_data struct
+    int value;
+
+    LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
+
+    while ((strcmp(sampling_data->did, "0") == 0 && sampling_settings.ctn_temp_sampling_on) ||
+           (strcmp(sampling_data->did, "1") == 0 && sampling_settings.ctn_hum_sampling_on)) {
+        // Get the curr sampling rate
+        int sampling_rate;
+        k_mutex_lock(&sampling_rate_mutex, K_FOREVER);
+        sampling_rate = global_sampling_rate;
+        k_mutex_unlock(&sampling_rate_mutex);
+
+        if (strcmp(sampling_data->did, "0") == 0) {
+            if (get_latest_temp_val(&value) == 0) {
+                const char *datetime_str = get_date_time();
+                generate_temp_json(sampling_data->did, datetime_str, value);
+            } else {
+                LOG_ERR("No temperature values available for JSON generation");
+            }
+        } else if (strcmp(sampling_data->did, "1") == 0) {
+            if (get_latest_hum_val(&value) == 0) {
+                const char *datetime_str = get_date_time();
+                generate_temp_json(sampling_data->did, datetime_str, value);
+            } else {
+                LOG_ERR("No humidity values available for JSON generation");
+            }
+        }
+
+        k_sleep(K_MSEC(sampling_rate));
+    }
+
+    LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
+
+    // Free the sampling_data struct
+    k_free(sampling_data);
+}
+//    // const char *did = "0"; // Device ID for temperature sensor
+//     struct sampling *sampling_data = (struct sampling *)arg1; // Retrieve the sampling_data struct
+   
+//     int temp_value, hum_value;
+//     int sampling_rate = 2000;
+
+    // while (sampling_settings.ctn_temp_sampling_on) {
+    //    // int num_retrieved = get_latest_temp_val(temp_values);
+
+    //    int new_rate;
+    //    if (k_msgq_get(&sampling_rate_msgq, &new_rate, K_NO_WAIT) == 0) {
+    //        sampling_rate = new_rate;
+    //      //  LOG_INF("Updated sampling rate: %d ms", sampling_rate);
+    //    }
+
+    //    if (strcmp(sampling_data->did, "0") == 0) {
+    //     //if (num_retrieved > 0) {
+    //         if (get_latest_temp_val(&temp_value) == 0) {
+    //         const char *datetime_str = get_date_time();
+    //     //    LOG_INF("Retrieved RTC time: %s", datetime_str);
+
+    //         // Generate JSON with the retrieved values
+            
+    //         generate_temp_json(sampling_data->did, datetime_str, temp_value);
+    //     } else {
+    //         LOG_ERR("No temperature values available for JSON generation");
+    //     }
+    //     k_sleep(K_MSEC(sampling_rate));
+//     }
+// }
+
+//     while (sampling_settings.ctn_hum_sampling_on) {
+//       if (strcmp(sampling_data->did, "1") == 0) {
+//         if (get_latest_hum_val(&hum_value) == 0) {
+//             const char *datetime_str = get_date_time();
+//         //    LOG_INF("Retrieved RTC time: %s", datetime_str);
+
+//             // Generate JSON with the retrieved values
+            
+//             generate_temp_json(sampling_data->did, datetime_str, hum_value);
+//         } else {
+//             LOG_ERR("No temperature values available for JSON generation");
+//         }
+//      }
+//         k_sleep(K_MSEC(sampling_rate));
+//     //    k_sleep(K_SECONDS(2)); // Adjust the interval as needed
+//     }
+
+    
+//     LOG_INF("JSON generation thread stopped");
+// }
+
+
+ 
+static int generate_temp_json(const char *did, const char *rtc_time, int value) {
+    struct sampling temp_data;
+    temp_data.did = did;
+    temp_data.rtc_time = rtc_time; // Use the formatted string
+
+     temp_data.value= value;
+ 
+
+    char str[128];
+    int ret = json_obj_encode_buf(sampling_descr, ARRAY_SIZE(sampling_descr), &temp_data, str, sizeof(str));
+
+    if (ret < 0) {
+        LOG_ERR("JSON encoding error: %d", ret);
+        return ret;
+    }
+
+    LOG_INF("%s", str);
+    return 0;
+} 
+
 static int cmd_contin(const struct shell *shell, size_t argc, char **argv) {
-    struct sampling sampling_data;
+    static struct sampling sampling_data;
+    
     if (argc < 3) {
         shell_print(shell, "Usage: sample <s/p> <DID> or sample w <rate>");
         return 0;
@@ -101,36 +244,32 @@ static int cmd_contin(const struct shell *shell, size_t argc, char **argv) {
     if (strcmp(argv[1], "s") == 0) { 
         if (strcmp(did, "0") == 0) {
             // Start temp sampling
-            int temp_val;
+        
             if (sampling_settings.ctn_temp_sampling_on) {
                 shell_print(shell, "Continuous sampling for temp sensor already enabled");
                 return 0;
             }
 
             sampling_settings.ctn_temp_sampling_on = true;
+//            sampling_data.did = did;
+
+            struct sampling *temp_sampling_data = k_malloc(sizeof(struct sampling));
+            temp_sampling_data->did = did;
+
+        
             k_thread_create(&temp_thread_data, temp_thread_stack,
                             K_THREAD_STACK_SIZEOF(temp_thread_stack),
                             read_temp_continous, NULL, NULL, NULL,
                             SENSOR_PRIORITY, 0, K_NO_WAIT);
+      
+        k_thread_create(&temp_json_thread_data, json_thread_stack,
+                K_THREAD_STACK_SIZEOF(json_thread_stack),
+                json_generation_thread, temp_sampling_data, NULL, NULL,
+                SENSOR_PRIORITY, 0, K_NO_WAIT);
 
-            // if (get_latest_temp_val(&temp_val) == 0){
-            //     sampling_data.did = did;
-            //     sampling_data.rtc_time = get_date_time();
-            //     sampling_data.value = temp_val;
-            // }
-           
-            // printk("Temp value: %d\n", temp_val);
+ 
             shell_print(shell, "Continuous sampling for temperature sensor started");
-        // } else if (strcmp(did, "11") == 0) {
-        //     int temp_val;
-        //      if (get_latest_temp_val(&temp_val) == 0){
-        //         sampling_data.did = did;
-        //         sampling_data.rtc_time = get_date_time();
-        //         sampling_data.value = temp_val;
-        //     }
-           
-        //     printk("Temp value: %d\n", temp_val);
-         }
+        }
         
         else if (strcmp(did, "1") == 0) {
             if (sampling_settings.ctn_hum_sampling_on) {
@@ -139,10 +278,18 @@ static int cmd_contin(const struct shell *shell, size_t argc, char **argv) {
             }
             // Start hum sampling
             sampling_settings.ctn_hum_sampling_on = true;
+ 
+               struct sampling *hum_sampling_data = k_malloc(sizeof(struct sampling));
+               hum_sampling_data->did = did;
+        //    sampling_data.did = did;
             k_thread_create(&hum_thread_data, hum_thread_stack,
                             K_THREAD_STACK_SIZEOF(hum_thread_stack),
                             read_hum_continous, NULL, NULL, NULL,
                             SENSOR_PRIORITY, 0, K_NO_WAIT);
+          k_thread_create(&hum_json_thread_data, json_thread_stack,
+            K_THREAD_STACK_SIZEOF(json_thread_stack),
+            json_generation_thread, hum_sampling_data, NULL, NULL,
+            SENSOR_PRIORITY, 0, K_NO_WAIT);
 
             shell_print(shell, "Continuous sampling for humidity sensor started");
         } else if (strcmp(did, "2") == 0) {
@@ -265,21 +412,40 @@ static int cmd_contin(const struct shell *shell, size_t argc, char **argv) {
             shell_print(shell, "Invalid DID: %s", did);
             return 0;
         }
-    } else if (strcmp(argv[1], "w") == 0) { 
-        if (argc != 3) {
-            shell_print(shell, "Usage: sample w <rate>");
-            return 0;
-        }
-        int rate = atoi(argv[2]);
-        if (rate < 0) {
-            shell_print(shell, "Invalid rate: %d", rate);
-            return 0;
-        }
-        if (k_msgq_put(&sampling_rate_msgq, &rate, K_NO_WAIT) != 0) {
-            shell_print(shell, "Failed to update sampling rate");
-            return 0;
-        }
-        shell_print(shell, "Sampling rate set to %d ms", rate);
+      }  else if (strcmp(argv[1], "w") == 0) { 
+            if (argc != 3) {
+                shell_print(shell, "Usage: sample w <rate>");
+                return 0;
+            }
+            int rate = atoi(argv[2]);
+            if (rate <= 0) {
+                shell_print(shell, "cant be -ms: %d", rate);
+                return 0;
+            }
+         
+            k_mutex_lock(&sampling_rate_mutex, K_FOREVER);
+            global_sampling_rate = rate;
+            k_mutex_unlock(&sampling_rate_mutex);
+        
+            shell_print(shell, "Sampling rate set to %d ms", rate);
+            LOG_INF("Sampling rate changed to %d ms", rate);
+     //   }
+ 
+    // } else if (strcmp(argv[1], "w") == 0) { 
+    //     if (argc != 3) {
+    //         shell_print(shell, "Usage: sample w <rate>");
+    //         return 0;
+    //     }
+        // int rate = atoi(argv[2]);
+        // if (rate < 0) {
+        //     shell_print(shell, "Invalid rate: %d", rate);
+        //     return 0;
+        // }
+        // if (k_msgq_put(&sampling_rate_msgq, &rate, K_NO_WAIT) != 0) {
+        //     shell_print(shell, "Failed to update sampling rate");
+        //     return 0;
+        // }
+        // shell_print(shell, "Sampling rate set to %d ms", rate);
     } else {
         shell_print(shell, "Invalid command. Usage: sample <s/p> <DID> or sample w <rate>");
         return 0;
@@ -298,7 +464,10 @@ static int cmd_rtc(const struct shell *shell, size_t argc, char **argv) {
             shell_print(shell, "Usage: rtc r");
             return 0;
         }
-        get_date_time();
+       // get_date_time();
+       const char *datetime_str = get_date_time();
+       LOG_INF("RTC time: %s", datetime_str);
+
     } else if (strcmp(argv[1], "w") == 0) { 
         if (argc != 8) {
             shell_print(shell, "Usage: rtc w <year> <month> <day> <hour> <min> <sec>");

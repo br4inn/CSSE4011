@@ -11,5 +11,7 @@
 
 int set_rtc(int year, int month, int day, int hour, int min, int sec);
 int set_date_time(const struct device *rtc, int year, int month, int day, int hour, int min, int sec);
-int get_date_time(void);
+//int get_date_time(void);
+
+const char *get_date_time(void);
 #endif // RTC_H

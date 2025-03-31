@@ -4,15 +4,14 @@
 #include <zephyr/kernel.h>
  
 extern struct k_msgq sampling_rate_msgq;
-
-
-K_MSGQ_DEFINE(sampling_rate_msgq, MSGQ_MSG_SIZE, MSGQ_MAX_MSGS, 4);
-
-struct sampling {
-    const char *did;
-    int rtc_time;
-    int value;
-};
+#define MSGQ_MAX_MSGS 10
+#define MSGQ_MSG_SIZE sizeof(int)
+ 
+// struct sampling {
+//     const char *did;
+//     int rtc_time;
+//     int value;
+// };
 
 struct sampling_ctl {
     bool ctn_sampling_on;

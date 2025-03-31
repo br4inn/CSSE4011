@@ -28,30 +28,72 @@ int set_date_time(const struct device *rtc, int year, int month, int day, int ho
     return ret;
 }
 
-int get_date_time(void)
+// int get_date_time(void)
+// {
+// 	int ret = 0;
+// 	struct rtc_time tm;
+
+// 	ret = rtc_get_time(rtc, &tm);
+//     if (ret < 0) {
+//         LOG_INF("setting default time\n");
+
+//         // Set default 
+//         set_date_time(rtc, 2025, 1, 1, 0, 0, 0);
+
+//         // Retry getting the time
+//         ret = rtc_get_time(rtc, &tm);
+//         if (ret < 0) {
+//             LOG_INF("Cannot read date time even after setting default: %d\n", ret);
+//             return ret;
+//         }
+//     }
+
+    
+//     // Format the date and time into a string
+//     snprintf(datetime_str, max_len, "%04d-%02d-%02d %02d:%02d:%02d",
+//         tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+//         tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+//     LOG_INF("RTC date and time: %04d-%02d-%02d %02d:%02d:%02d\n",
+//         tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+//         tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+//     return ret;
+// }
+
+#include <stdio.h> // For snprintf()
+
+const char *get_date_time(void)
 {
-	int ret = 0;
-	struct rtc_time tm;
+    static char datetime_str[32]; // Static buffer to hold the formatted date and time
+    int ret = 0;
+    struct rtc_time tm;
 
-	ret = rtc_get_time(rtc, &tm);
+    // Get the current RTC time
+    ret = rtc_get_time(rtc, &tm);
     if (ret < 0) {
-        LOG_INF("setting default time\n");
+        LOG_INF("Setting default time\n");
 
-        // Set default 
+        // Set default time
         set_date_time(rtc, 2025, 1, 1, 0, 0, 0);
 
         // Retry getting the time
         ret = rtc_get_time(rtc, &tm);
         if (ret < 0) {
             LOG_INF("Cannot read date time even after setting default: %d\n", ret);
-            return ret;
+            return "1970-01-01 00:00:00"; // Return a default value if RTC fails
         }
     }
-    LOG_INF("RTC date and time: %04d-%02d-%02d %02d:%02d:%02d\n",
-        tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
-        tm.tm_hour, tm.tm_min, tm.tm_sec);
 
-    return ret;
+    // LOG_INF("RTC date and time: %04d-%02d-%02d %02d:%02d:%02d",
+    //         tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+    //         tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 
+    snprintf(datetime_str, sizeof(datetime_str), "%04d-%02d-%02d %02d:%02d:%02d",
+             tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+             tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+    return datetime_str; // Return the formatted string
 }
 // 	if (ret < 0) {
 // 		printk("Cannot read date time: %d\n", ret);
