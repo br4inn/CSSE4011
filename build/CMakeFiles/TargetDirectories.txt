@@ -103,6 +103,7 @@
 /home/brain/repo/build/zephyr/subsys/debug/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/fb/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/fb/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/subsys/fs/CMakeFiles/subsys__fs.dir
 /home/brain/repo/build/zephyr/subsys/fs/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/fs/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/ipc/CMakeFiles/edit_cache.dir
@@ -135,6 +136,8 @@
 /home/brain/repo/build/zephyr/subsys/stats/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/storage/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/storage/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/subsys/storage/flash_map/CMakeFiles/edit_cache.dir
+/home/brain/repo/build/zephyr/subsys/storage/flash_map/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/task_wdt/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/task_wdt/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/testsuite/CMakeFiles/edit_cache.dir
@@ -143,6 +146,8 @@
 /home/brain/repo/build/zephyr/subsys/tracing/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/usb/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/usb/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/subsys/disk/CMakeFiles/edit_cache.dir
+/home/brain/repo/build/zephyr/subsys/disk/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/shell/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/shell/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/shell/modules/CMakeFiles/edit_cache.dir
@@ -155,6 +160,7 @@
 /home/brain/repo/build/zephyr/subsys/shell/backends/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/drivers/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/drivers/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/drivers/disk/CMakeFiles/drivers__disk.dir
 /home/brain/repo/build/zephyr/drivers/disk/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/drivers/disk/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/drivers/firmware/CMakeFiles/edit_cache.dir
@@ -183,6 +189,12 @@
 /home/brain/repo/build/zephyr/drivers/console/CMakeFiles/drivers__console.dir
 /home/brain/repo/build/zephyr/drivers/console/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/drivers/console/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/drivers/dma/CMakeFiles/drivers__dma.dir
+/home/brain/repo/build/zephyr/drivers/dma/CMakeFiles/edit_cache.dir
+/home/brain/repo/build/zephyr/drivers/dma/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/drivers/flash/CMakeFiles/drivers__flash.dir
+/home/brain/repo/build/zephyr/drivers/flash/CMakeFiles/edit_cache.dir
+/home/brain/repo/build/zephyr/drivers/flash/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/drivers/gpio/CMakeFiles/drivers__gpio.dir
 /home/brain/repo/build/zephyr/drivers/gpio/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/drivers/gpio/CMakeFiles/rebuild_cache.dir
@@ -308,6 +320,7 @@
 /home/brain/repo/build/modules/cmsis-dsp/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/modules/cmsis-nn/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/modules/cmsis-nn/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/modules/fatfs/CMakeFiles/modules__fatfs.dir
 /home/brain/repo/build/modules/fatfs/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/modules/fatfs/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/modules/adi/CMakeFiles/edit_cache.dir
@@ -400,6 +413,7 @@
 /home/brain/repo/build/modules/libmctp/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/modules/libmetal/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/modules/libmetal/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/modules/littlefs/CMakeFiles/modules__littlefs.dir
 /home/brain/repo/build/modules/littlefs/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/modules/littlefs/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/modules/loramac-node/CMakeFiles/edit_cache.dir

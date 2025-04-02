@@ -11,5 +11,5 @@
 
 void read_pressure();
 void read_pressure_continous();
-
+int get_latest_press_val(int *press_value);
 #endif  

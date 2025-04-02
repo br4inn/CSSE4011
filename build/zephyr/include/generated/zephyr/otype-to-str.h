@@ -41,6 +41,8 @@ case K_OBJ_SENSOR_DECODER_API: ret = "sensor_decoder_api"; break;
 #endif
 /* Driver subsystems */
 case K_OBJ_DRIVER_ADC: ret = "adc driver"; break;
+case K_OBJ_DRIVER_DMA: ret = "dma driver"; break;
+case K_OBJ_DRIVER_FLASH: ret = "flash driver"; break;
 case K_OBJ_DRIVER_GPIO: ret = "gpio driver"; break;
 case K_OBJ_DRIVER_I2C: ret = "i2c driver"; break;
 case K_OBJ_DRIVER_I2C_TARGET: ret = "i2c_target driver"; break;
@@ -62,7 +64,6 @@ case K_OBJ_DRIVER_COUNTER: ret = "counter driver"; break;
 case K_OBJ_DRIVER_DAC: ret = "dac driver"; break;
 case K_OBJ_DRIVER_DAI: ret = "dai driver"; break;
 case K_OBJ_DRIVER_DISPLAY: ret = "display driver"; break;
-case K_OBJ_DRIVER_DMA: ret = "dma driver"; break;
 case K_OBJ_DRIVER_EDAC: ret = "edac driver"; break;
 case K_OBJ_DRIVER_EEPROM: ret = "eeprom driver"; break;
 case K_OBJ_DRIVER_EMUL_BBRAM: ret = "emul_bbram driver"; break;
@@ -71,7 +72,6 @@ case K_OBJ_DRIVER_EMUL_SENSOR: ret = "emul_sensor driver"; break;
 case K_OBJ_DRIVER_ENTROPY: ret = "entropy driver"; break;
 case K_OBJ_DRIVER_ESPI: ret = "espi driver"; break;
 case K_OBJ_DRIVER_ESPI_SAF: ret = "espi_saf driver"; break;
-case K_OBJ_DRIVER_FLASH: ret = "flash driver"; break;
 case K_OBJ_DRIVER_FPGA: ret = "fpga driver"; break;
 case K_OBJ_DRIVER_FUEL_GAUGE: ret = "fuel_gauge driver"; break;
 case K_OBJ_DRIVER_GNSS: ret = "gnss driver"; break;

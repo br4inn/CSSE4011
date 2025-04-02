@@ -3646,6 +3646,7 @@ zephyr_udc0: &usbotg_fs {
 };
 
 
+
 / {
  aliases {
   rtc = &rtc;
@@ -3659,6 +3660,24 @@ zephyr_udc0: &usbotg_fs {
 
 &i2c2 {
     status = "okay";
+};
+
+
+
+
+&flash0 {
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+
+
+        storage_partition: partition@f8000 {
+            label = "storage";
+            reg = <0xf8000 ((32) * 1024)>;
+        };
+    };
 };
 # 0 "<command-line>" 2
 # 1 "/home/brain/repo/zephyr/misc/empty_file.c"

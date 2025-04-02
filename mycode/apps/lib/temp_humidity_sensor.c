@@ -48,7 +48,7 @@ void read_temp_continous() {
     }
 
     while (sampling_settings.ctn_temp_sampling_on) { 
-        // Get the current sampling rate
+        // Get the curr sampling rate
         int sampling_rate;
         k_mutex_lock(&sampling_rate_mutex, K_FOREVER);
         sampling_rate = global_sampling_rate;
