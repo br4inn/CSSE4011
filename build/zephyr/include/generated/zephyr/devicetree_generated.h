@@ -5863,9 +5863,9 @@
 #define DT_N_S_gpio_keys_S_button_0_CHILD_IDX 0
 
 /* Helpers for dealing with node labels: */
-#define DT_N_S_gpio_keys_S_button_0_NODELABEL_NUM 1
-#define DT_N_S_gpio_keys_S_button_0_FOREACH_NODELABEL(fn) fn(user_button)
-#define DT_N_S_gpio_keys_S_button_0_FOREACH_NODELABEL_VARGS(fn, ...) fn(user_button, __VA_ARGS__)
+#define DT_N_S_gpio_keys_S_button_0_NODELABEL_NUM 2
+#define DT_N_S_gpio_keys_S_button_0_FOREACH_NODELABEL(fn) fn(user_button) fn(button_0)
+#define DT_N_S_gpio_keys_S_button_0_FOREACH_NODELABEL_VARGS(fn, ...) fn(user_button, __VA_ARGS__) fn(button_0, __VA_ARGS__)
 #define DT_N_S_gpio_keys_S_button_0_FOREACH_ANCESTOR(fn) fn(DT_N_S_gpio_keys) fn(DT_N)
 
 /* Helper macros for child nodes of this node. */
@@ -5899,6 +5899,7 @@
 #define DT_N_S_gpio_keys_S_button_0_EXISTS 1
 #define DT_N_ALIAS_sw0             DT_N_S_gpio_keys_S_button_0
 #define DT_N_NODELABEL_user_button DT_N_S_gpio_keys_S_button_0
+#define DT_N_NODELABEL_button_0    DT_N_S_gpio_keys_S_button_0
 
 /* Macros for properties that are special in the specification: */
 #define DT_N_S_gpio_keys_S_button_0_REG_NUM 0
@@ -5924,11 +5925,11 @@
 #define DT_N_S_gpio_keys_S_button_0_P_gpios_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_gpio_keys_S_button_0, gpios, 0, __VA_ARGS__)
 #define DT_N_S_gpio_keys_S_button_0_P_gpios_LEN 1
 #define DT_N_S_gpio_keys_S_button_0_P_gpios_EXISTS 1
-#define DT_N_S_gpio_keys_S_button_0_P_label "User"
-#define DT_N_S_gpio_keys_S_button_0_P_label_STRING_UNQUOTED User
-#define DT_N_S_gpio_keys_S_button_0_P_label_STRING_TOKEN User
-#define DT_N_S_gpio_keys_S_button_0_P_label_STRING_UPPER_TOKEN USER
-#define DT_N_S_gpio_keys_S_button_0_P_label_IDX_0 "User"
+#define DT_N_S_gpio_keys_S_button_0_P_label "User Button"
+#define DT_N_S_gpio_keys_S_button_0_P_label_STRING_UNQUOTED User Button
+#define DT_N_S_gpio_keys_S_button_0_P_label_STRING_TOKEN User_Button
+#define DT_N_S_gpio_keys_S_button_0_P_label_STRING_UPPER_TOKEN USER_BUTTON
+#define DT_N_S_gpio_keys_S_button_0_P_label_IDX_0 "User Button"
 #define DT_N_S_gpio_keys_S_button_0_P_label_IDX_0_EXISTS 1
 #define DT_N_S_gpio_keys_S_button_0_P_label_FOREACH_PROP_ELEM(fn) fn(DT_N_S_gpio_keys_S_button_0, label, 0)
 #define DT_N_S_gpio_keys_S_button_0_P_label_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_gpio_keys_S_button_0, label, 0)

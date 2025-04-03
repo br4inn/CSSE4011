@@ -80,12 +80,11 @@ static int generate_mag_json(const char *did, const char *rtc_time, int x, int y
 extern int get_latest_temp_val(int *temp_value);
 static int generate_temp_json(const char *did, const char *rtc_time, int value);
  
-#define USER_BUTTON_NODE DT_ALIAS(gpio_keys)
-// #if !DT_NODE_HAS_STATUS_OKAY(USER_BUTTON_NODE)
-// #error "Unsupported board: sw0 devicetree alias is not defined"
-// #endif
-
-static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET_OR(USER_BUTTON_NODE, gpioc,
+#define SW0_NODE	DT_ALIAS(sw0)
+#if !DT_NODE_HAS_STATUS_OKAY(SW0_NODE)
+#error "Unsupported board: sw0 devicetree alias is not defined"
+#endif
+static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET_OR(SW0_NODE, gpios,
     {0});
 static struct gpio_callback button_cb_data;
 
@@ -152,7 +151,7 @@ static const struct json_obj_descr all_sensors_descr[] = {
 
 
 #include <ff.h>
-
+void handle_button(bool continous);
 
 #define DISK_DRIVE_NAME "SD"
 #define DISK_MOUNT_PT "/ext"
@@ -350,13 +349,14 @@ static int generate_all_sensors_json(const char *did, const char *rtc_time, int 
 
 void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
     printk("Button pressed!\n");
-    handle_button(true); // Handle button press
-// FOR BUTTON
+    bool pressed = sampling_settings.ctn_sampling_on;
+    pressed = !pressed;
+    handle_button(pressed); // Handle button press
+// FOR BUTTONp
 // / {
 //     aliases {
 //         sw0 = &button_0;
 //     };
-// };
 
 // gpio_keys {
 //     compatible = "gpio-keys";
@@ -366,6 +366,8 @@ void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t
 //         zephyr,code = <INPUT_KEY_0>;
 //     };
 // };
+// };
+
 }
 
 void configure_button_interrupt() {
@@ -1074,7 +1076,7 @@ int main(void)
 //     K_THREAD_STACK_SIZEOF(button_thread_stack),
 //     button_thread, NULL, NULL, NULL,
 //     BUTTON_THREAD_PRIORITY, 0, K_NO_WAIT);
-//configure_button_interrupt();
+configure_button_interrupt();
 
  
  //   LOG_INF("Starting sensors");
