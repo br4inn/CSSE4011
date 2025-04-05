@@ -1,5 +1,0 @@
-Flask
-matplotlib
-PyQt5
-requests
-numpy
