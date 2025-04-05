@@ -59,7 +59,7 @@ void read_pressure_continous() {
         if (ring_buf_put(&press_ring_buf, (uint8_t *)&press_val, sizeof(press_val)) < 0) {
             LOG_ERR("Failed to put press value in ring buffer");
         }
-        LOG_INF("Pressure: %d.%06d kPa", pressure.val1, pressure.val2);
+ //       LOG_INF("Pressure: %d.%06d kPa", pressure.val1, pressure.val2);
  
         k_sleep(K_MSEC(sampling_rate));
     }

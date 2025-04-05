@@ -106,14 +106,13 @@
 /home/brain/repo/build/zephyr/subsys/fs/CMakeFiles/subsys__fs.dir
 /home/brain/repo/build/zephyr/subsys/fs/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/fs/CMakeFiles/rebuild_cache.dir
+/home/brain/repo/build/zephyr/subsys/fs/ext2/CMakeFiles/subsys__fs__ext2.dir
+/home/brain/repo/build/zephyr/subsys/fs/ext2/CMakeFiles/edit_cache.dir
+/home/brain/repo/build/zephyr/subsys/fs/ext2/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/ipc/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/ipc/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/logging/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/logging/CMakeFiles/rebuild_cache.dir
-/home/brain/repo/build/zephyr/subsys/logging/backends/CMakeFiles/edit_cache.dir
-/home/brain/repo/build/zephyr/subsys/logging/backends/CMakeFiles/rebuild_cache.dir
-/home/brain/repo/build/zephyr/subsys/logging/frontends/CMakeFiles/edit_cache.dir
-/home/brain/repo/build/zephyr/subsys/logging/frontends/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/mem_mgmt/CMakeFiles/edit_cache.dir
 /home/brain/repo/build/zephyr/subsys/mem_mgmt/CMakeFiles/rebuild_cache.dir
 /home/brain/repo/build/zephyr/subsys/mgmt/CMakeFiles/edit_cache.dir

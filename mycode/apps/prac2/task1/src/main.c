@@ -87,26 +87,17 @@ static int generate_temp_json(const char *did, const char *rtc_time, int value);
 static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET_OR(SW0_NODE, gpios,
     {0});
 static struct gpio_callback button_cb_data;
-
-// void button_pressed(const struct device *dev, struct gpio_callback *cb,
-//     uint32_t pins)
-// {
-// printk("Button pressed at %" PRIu32 "\n", k_cycle_get_32());
-// }
+ 
 
 struct sampling {
     const char *did;
     const char *rtc_time;
-    int value;
-    // int x;
-    // int y;
-    // int z;
+    int value; 
 };
 
 struct mag_sampling {
     const char *did;
-    const char *rtc_time;
-   // int value;
+    const char *rtc_time; 
     int x;
     int y;
     int z;
@@ -131,8 +122,7 @@ static const struct json_obj_descr sampling_descr[] = {
 
 static const struct json_obj_descr mag_sampling_descr[] = {
     JSON_OBJ_DESCR_PRIM(struct mag_sampling, did, JSON_TOK_STRING),
-    JSON_OBJ_DESCR_PRIM(struct mag_sampling, rtc_time, JSON_TOK_STRING),
- //   JSON_OBJ_DESCR_PRIM(struct mag_sampling, value, JSON_TOK_NUMBER),
+    JSON_OBJ_DESCR_PRIM(struct mag_sampling, rtc_time, JSON_TOK_STRING), 
     JSON_OBJ_DESCR_PRIM(struct mag_sampling, x, JSON_TOK_NUMBER),
     JSON_OBJ_DESCR_PRIM(struct mag_sampling, y, JSON_TOK_NUMBER),
     JSON_OBJ_DESCR_PRIM(struct mag_sampling, z, JSON_TOK_NUMBER),
@@ -152,175 +142,7 @@ static const struct json_obj_descr all_sensors_descr[] = {
 
 #include <ff.h>
 void handle_button(bool continous);
-
-#define DISK_DRIVE_NAME "SD"
-#define DISK_MOUNT_PT "/ext"
-
-#define MOUNT_POINT "/lfs"
-
-static struct fs_mount_t mp = {
-    .type = FS_EXT2,
-	.flags = FS_MOUNT_FLAG_NO_FORMAT,
-	.storage_dev = (void *)DISK_DRIVE_NAME,
-	.mnt_point = "/ext",
-};
-
-    #include <zephyr/fs/ext2.h>
-
-    #define DISK_DRIVE_NAME "SD"
-    #define DISK_MOUNT_PT "/ext"
-
-
-#ifdef CONFIG_FS_SAMPLE_CREATE_SOME_ENTRIES
-static bool create_some_entries(const char *base_path)
-{
-	char path[MAX_PATH];
-	struct fs_file_t file;
-	int base = strlen(base_path);
-
-	fs_file_t_init(&file);
-
-	if (base >= (sizeof(path) - SOME_REQUIRED_LEN)) {
-		LOG_ERR("Not enough concatenation buffer to create file paths");
-		return false;
-	}
-
-	LOG_INF("Creating some dir entries in %s", base_path);
-	strncpy(path, base_path, sizeof(path));
-
-	path[base++] = '/';
-	path[base] = 0;
-	strcat(&path[base], SOME_FILE_NAME);
-
-	if (fs_open(&file, path, FS_O_CREATE) != 0) {
-		LOG_ERR("Failed to create file %s", path);
-		return false;
-	}
-	fs_close(&file);
-
-	path[base] = 0;
-	strcat(&path[base], SOME_DIR_NAME);
-
-	if (fs_mkdir(path) != 0) {
-		LOG_ERR("Failed to create dir %s", path);
-		/* If code gets here, it has at least successes to create the
-		 * file so allow function to return true.
-		 */
-	}
-	return true;
-}
-#endif
-    
  
-
-static int lsdir(const char *path)
-{
-	int res;
-	struct fs_dir_t dirp;
-	static struct fs_dirent entry;
-	int count = 0;
-
-	fs_dir_t_init(&dirp);
-
-	/* Verify fs_opendir() */
-	res = fs_opendir(&dirp, path);
-	if (res) {
-		printk("Error opening dir %s [%d]\n", path, res);
-		return res;
-	}
-
-	printk("\nListing dir %s ...\n", path);
-	for (;;) {
-		/* Verify fs_readdir() */
-		res = fs_readdir(&dirp, &entry);
-
-		/* entry.name[0] == 0 means end-of-dir */
-		if (res || entry.name[0] == 0) {
-			break;
-		}
-
-		if (entry.type == FS_DIR_ENTRY_DIR) {
-			printk("[DIR ] %s\n", entry.name);
-		} else {
-			printk("[FILE] %s (size = %zu)\n",
-				entry.name, entry.size);
-		}
-		count++;
-	}
-
-	/* Verify fs_closedir() */
-	fs_closedir(&dirp);
-	if (res == 0) {
-		res = count;
-	}
-
-	return res;
-}
-
-
-static int cmd_file_log(const struct shell *shell, size_t argc, char **argv) {
-   
-    int res;
-
-    res = fs_mount(&mp);
-    if (res < 0) {
-        printk("Error mounting file system: %d\n", res);
-        return;
-    }
-
-    printk("File system mounted at %s\n", MOUNT_POINT);
-
-   
-    if (argc != 3) {
-        shell_print(shell, "Usage: log <DID> <filename>");
-        return 0;
-    }
-    
-    const char *did = argv[1];
-    const char *filename = argv[2];
-    char filepath[64];
-    snprintf(filepath, sizeof(filepath), "%s/%s", MOUNT_POINT, filename);
-
-    struct fs_file_t file;
-    fs_file_t_init(&file);
-
-    int ret = fs_open(&file, filepath, FS_O_CREATE | FS_O_WRITE);
-    if (ret < 0) {
-        shell_print(shell, "Error opening file: %d", ret);
-        return ret;
-    }
-    char values[128];
-    int value;
-
-    if (strcmp(did, "0") == 0) {
-        snprintf(values, sizeof(values), get_latest_temp_val(value));
-    } else if (strcmp(did, "1") == 0) {
-        snprintf(values, sizeof(values), get_latest_hum_val(value));
-    } else if (strcmp(did, "2") == 0) {
-        snprintf(values, sizeof(values), get_latest_press_val(value));
-    } else if (strcmp(did, "4") == 0) {
-        snprintf(values, sizeof(values), get_latest_mag_val(value));
-   
-    } else {
-        shell_print(shell, "Invalid DID: %s", did);
-        fs_close(&file);
-        return 0;
-    }
-
-    
-    ret = fs_write(&file, values, strlen(values));
-    if (ret < 0) {
-        shell_print(shell, "Error writing to file: %d", ret);
-        fs_close(&file);
-        return ret;
-    }
-
-    shell_print(shell, "Sensor data logged to %s", filepath);
-    fs_close(&file);
-    return 0;
-}
-
-SHELL_CMD_REGISTER(log, NULL, "Log sensor data to a file", cmd_file_log);
 
 static int generate_all_sensors_json(const char *did, const char *rtc_time, int temp_value, int hum_value, int press_value, int mag_x, int mag_y, int mag_z) {
     struct all_sensors_data all_data;
@@ -341,32 +163,20 @@ static int generate_all_sensors_json(const char *did, const char *rtc_time, int 
         return ret;
     }
 
-    LOG_INF("Generated JSON: %s", str);
+   // shell_print("Generated JSON: %s", str);
+    
+    printf("%s\n", str);
     return 0;
 }
 
 
 
 void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
-    printk("Button pressed!\n");
+   // printk("Button pressed\n");
     bool pressed = sampling_settings.ctn_sampling_on;
     pressed = !pressed;
-    handle_button(pressed); // Handle button press
-// FOR BUTTONp
-// / {
-//     aliases {
-//         sw0 = &button_0;
-//     };
-
-// gpio_keys {
-//     compatible = "gpio-keys";
-//     button_0: button_0 {
-//         label = "User Button";
-//         gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
-//         zephyr,code = <INPUT_KEY_0>;
-//     };
-// };
-// };
+    handle_button(pressed);  
+ 
 
 }
 
@@ -401,7 +211,7 @@ void configure_button_interrupt() {
 void all_sensors_json_generation_thread(void *arg1) {
     struct sampling *sampling_data = (struct sampling *)arg1;
 
-LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
+//LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
 
 while (sampling_settings.ctn_sampling_on) {
     int temp_value, hum_value, press_value;
@@ -424,7 +234,7 @@ while (sampling_settings.ctn_sampling_on) {
     k_sleep(K_MSEC(global_sampling_rate));
 }
 
-LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
+//LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
 
 k_free(sampling_data);
 }
@@ -433,23 +243,13 @@ void json_generation_thread(void *arg1) {
     struct sampling *sampling_data = (struct sampling *)arg1;
     int value;
 
-    LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
+   // LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
 
-    // Validate the DID value
-    // if (strcmp(sampling_data->did, "0") != 0 &&
-    //     strcmp(sampling_data->did, "1") != 0 &&
-    //     strcmp(sampling_data->did, "2") != 0 &&
-    //     strcmp(sampling_data->did, "4") != 0) {  
-    //     LOG_ERR("Invalid DID: %s", sampling_data->did);
-    //     k_free(sampling_data);
-    //     return;
-    // }
-
+ 
     while ((strcmp(sampling_data->did, "0") == 0 && sampling_settings.ctn_temp_sampling_on) ||
            (strcmp(sampling_data->did, "1") == 0 && sampling_settings.ctn_hum_sampling_on) ||
-           (strcmp(sampling_data->did, "2") == 0 && sampling_settings.ctn_pressure_sampling_on)){
-           //||
-         //  (strcmp(sampling_data->did, "4") == 0 && sampling_settings.ctn_mag_sampling_on)) {
+           (strcmp(sampling_data->did, "2") == 0 && sampling_settings.ctn_pressure_sampling_on)) {
+        
         int sampling_rate;
         k_mutex_lock(&sampling_rate_mutex, K_FOREVER);
         sampling_rate = global_sampling_rate;
@@ -459,39 +259,26 @@ void json_generation_thread(void *arg1) {
             if (get_latest_temp_val(&value) == 0) {
                 const char *datetime_str = get_date_time();
                 generate_temp_json(sampling_data->did, datetime_str, value);
-            } else {
-       //         LOG_ERR("No temperature values available for JSON generation");
             }
         } else if (strcmp(sampling_data->did, "1") == 0) {
             if (get_latest_hum_val(&value) == 0) {
                 const char *datetime_str = get_date_time();
                 generate_temp_json(sampling_data->did, datetime_str, value);
-            } else {
-          //      LOG_ERR("No humidity values available for JSON generation");
             }
-    //     } else if (strcmp(sampling_data->did, "4") == 0) {
-    //         struct mag_data mag_val;
-    //  if (get_latest_mag_val(&mag_val) == 0) {
-    //        const char *datetime_str = get_date_time();
-    //     generate_mag_json(mag_sampling_data->did, datetime_str,
-    //                       mag_val.x.val1, mag_val.y.val1, mag_val.z.val1);
-    // }else {
-    //       //      LOG_ERR("No magnetometer values available for JSON generation");
-    //         }
+    
         }
     else if (strcmp(sampling_data->did, "2") == 0) {
         if (get_latest_press_val(&value) == 0) {
             const char *datetime_str = get_date_time();
             generate_temp_json(sampling_data->did, datetime_str, value);
-        } else {
-      //      LOG_ERR("No humidity values available for JSON generation");
+        
         }
     }
 
         k_sleep(K_MSEC(sampling_rate));
     }
 
-    LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
+   // LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
 
     k_free(sampling_data);
 }
@@ -525,7 +312,7 @@ void mag_json_generation_thread(void *arg1) {
         k_sleep(K_MSEC(sampling_rate));
     }
 
-    LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
+    //LOG_INF("JSON generation thread stopped for DID: %s", sampling_data->did);
 
     k_free(sampling_data);
 }
@@ -546,7 +333,7 @@ static int generate_mag_json(const char *did, const char *rtc_time, int x, int y
         return ret;
     }
 
-    LOG_INF("Generated JSON: %s", str);
+    printf("%s\n", str);
     return 0;
 }
 
@@ -567,13 +354,12 @@ static int generate_temp_json(const char *did, const char *rtc_time, int value) 
         return ret;
     }
 
-    LOG_INF("%s", str);
+    printf("%s\n", str);
     return 0;
 } 
 
 static int cmd_contin(const struct shell *shell, size_t argc, char **argv) {
-  //  static struct sampling sampling_data;
- //  configure_button_interrupt();
+ 
     if (argc < 3) {
         shell_print(shell, "Usage: sample <s/p> <DID> or sample w <rate>");
         return 0;
@@ -601,16 +387,9 @@ const char *command = argv[1];
                 return 0;
             }
 
-            sampling_settings.ctn_temp_sampling_on = true;
-//            sampling_data.did = did;
+            sampling_settings.ctn_temp_sampling_on = true; 
 
-            struct sampling *temp_sampling_data     = k_malloc(sizeof(struct sampling));
-            // if (!temp_sampling_data) {
-            //     LOG_ERR("Failed to allocate memory for sampling_data");
-            //     return -ENOMEM;
-            // }
-            // strncpy(temp_sampling_data->did, did, sizeof(temp_sampling_data->did) - 1);
-            // temp_sampling_data->did[sizeof(temp_sampling_data->did) - 1];
+            struct sampling *temp_sampling_data = k_malloc(sizeof(struct sampling));
             temp_sampling_data->did = did;
 
             k_thread_create(&temp_thread_data, temp_thread_stack,
@@ -624,7 +403,8 @@ const char *command = argv[1];
                 SENSOR_PRIORITY, 0, K_NO_WAIT);
 
  
-            shell_print(shell, "Continuous sampling for temperature sensor started");
+        //
+        //     shell_print(shell, "Continuous sampling for temperature sensor started");
         }
         
         else if (strcmp(did, "1") == 0) {
@@ -636,12 +416,6 @@ const char *command = argv[1];
             sampling_settings.ctn_hum_sampling_on = true;
  
             struct sampling *hum_sampling_data = k_malloc(sizeof(struct sampling));
-            // if (!hum_sampling_data) {
-            //     LOG_ERR("Failed to allocate memory for sampling_data");
-            //     return -ENOMEM;
-            // }
-            // strncpy(hum_sampling_data->did, did, sizeof(hum_sampling_data->did) - 1);
-            // hum_sampling_data->did[sizeof(hum_sampling_data->did) - 1];
             hum_sampling_data->did=did;
             k_thread_create(&hum_thread_data, hum_thread_stack,
                             K_THREAD_STACK_SIZEOF(hum_thread_stack),
@@ -652,7 +426,7 @@ const char *command = argv[1];
             json_generation_thread, hum_sampling_data, NULL, NULL,
             SENSOR_PRIORITY, 0, K_NO_WAIT);
 
-            shell_print(shell, "Continuous sampling for humidity sensor started");
+        //    shell_print(shell, "Continuous sampling for humidity sensor started");
         } else if (strcmp(did, "2") == 0) {
             // Start press sampling
             if (sampling_settings.ctn_pressure_sampling_on) {
@@ -661,12 +435,6 @@ const char *command = argv[1];
             }
             sampling_settings.ctn_pressure_sampling_on = true;
             struct sampling *press_sampling_data = k_malloc(sizeof(struct sampling));
-            // if (!press_sampling_data) {
-            //     LOG_ERR("Failed to allocate memory for sampling_data");
-            //     return -ENOMEM;
-            // }
-            // strncpy(press_sampling_data->did, did, sizeof(press_sampling_data->did) - 1);
-            // press_sampling_data->did[sizeof(press_sampling_data->did) - 1];
             press_sampling_data->did = did;
             k_thread_create(&pressure_thread_data, pressure_thread_stack,
                             K_THREAD_STACK_SIZEOF(pressure_thread_stack),
@@ -674,12 +442,12 @@ const char *command = argv[1];
                             SENSOR_PRIORITY, 0, K_NO_WAIT);
 
                             
-        k_thread_create(&press_json_thread_data, json_thread_stack,
-            K_THREAD_STACK_SIZEOF(json_thread_stack),
-            json_generation_thread, press_sampling_data, NULL, NULL,
-            SENSOR_PRIORITY, 0, K_NO_WAIT);
+            k_thread_create(&press_json_thread_data, json_thread_stack,
+                    K_THREAD_STACK_SIZEOF(json_thread_stack),
+                    json_generation_thread, press_sampling_data, NULL, NULL,
+                    SENSOR_PRIORITY, 0, K_NO_WAIT);
 
-            shell_print(shell, "Continuous sampling for pressure sensor started");
+    //        shell_print(shell, "Continuous sampling for pressure sensor started");
     
         } else if (strcmp(did, "4") == 0) {
             if (sampling_settings.ctn_mag_sampling_on) {
@@ -707,7 +475,7 @@ const char *command = argv[1];
                             mag_json_generation_thread, mag_sampling_data, NULL, NULL,
                             SENSOR_PRIORITY, 0, K_NO_WAIT);
         
-            shell_print(shell, "Continuous sampling for mag sensor started");
+   //         shell_print(shell, "Continuous sampling for mag sensor started");
         
              } else if (strcmp(did, "15") == 0) {
                 if (sampling_settings.ctn_sampling_on) {
@@ -750,12 +518,9 @@ const char *command = argv[1];
                                     SENSOR_PRIORITY, 0, K_NO_WAIT);
                 }
             
-                // Create a thread for JSON generation for all sensors
+                //  JSON for all sensors
                 struct sampling *all_sensors_data = k_malloc(sizeof(struct sampling));
-                // if (!all_sensors_data) {
-                //     LOG_ERR("Failed to allocate memory for all_sensors_data");
-                //     return -ENOMEM;
-                // }
+            
                 all_sensors_data->did = did;
             
                 k_thread_create(&mag_json_thread_data, json_thread_stack,
@@ -763,14 +528,10 @@ const char *command = argv[1];
                                 all_sensors_json_generation_thread, all_sensors_data, NULL, NULL,
                                 SENSOR_PRIORITY, 0, K_NO_WAIT);
             
-                shell_print(shell, "Continuous sampling for all sensors started");
+      //          shell_print(shell, "Continuous sampling for all sensors started");
             }
     } else if (strcmp(argv[1], "p") == 0) {
-        // Stop sampling
-        // if (!sampling_settings.ctn_temp_sampling_on || !sampling_settings.ctn_hum_sampling_on || !sampling_settings.ctn_pressure_sampling_on) {
-        //     shell_print(shell, "No sampling is currently running");
-        //     return 0;
-        // }
+       
     
         if (strcmp(did, "0") == 0) {
             if (!sampling_settings.ctn_temp_sampling_on) {
@@ -855,8 +616,7 @@ static int cmd_rtc(const struct shell *shell, size_t argc, char **argv) {
         if (argc != 2) {
             shell_print(shell, "Usage: rtc r");
             return 0;
-        }
-       // get_date_time();
+        } 
        const char *datetime_str = get_date_time();
        LOG_INF("RTC time: %s", datetime_str);
 
@@ -922,12 +682,11 @@ static int cmd_sensor(const struct shell *shell, size_t argc, char **argv) {
 void handle_button(bool continous) {
     if (continous) {
        if (sampling_settings.ctn_sampling_on) {
-          
-                }
-            
+
+       }
+        
                 sampling_settings.ctn_sampling_on = true;
             
-                // Start threads for all sensors
                 if (!sampling_settings.ctn_temp_sampling_on) {
                     sampling_settings.ctn_temp_sampling_on = true;
                     k_thread_create(&temp_thread_data, temp_thread_stack,
@@ -960,12 +719,8 @@ void handle_button(bool continous) {
                                     SENSOR_PRIORITY, 0, K_NO_WAIT);
                 }
             
-                // Create a thread for JSON generation for all sensors
-                struct sampling *all_sensors_data = k_malloc(sizeof(struct sampling));
-        //         if (!all_sensors_data) {
-        //   //          LOG_ERR("Failed to allocate memory for all_sensors_data");
- 
-        //         }
+              struct sampling *all_sensors_data = k_malloc(sizeof(struct sampling));
+     
                 all_sensors_data->did = "15";
             
                 k_thread_create(&mag_json_thread_data, json_thread_stack,
@@ -979,108 +734,20 @@ void handle_button(bool continous) {
          
             if (!sampling_settings.ctn_sampling_on) { 
             }
-               sampling_settings.ctn_temp_sampling_on = false;
+            sampling_settings.ctn_temp_sampling_on = false;
             sampling_settings.ctn_hum_sampling_on = false;
             sampling_settings.ctn_pressure_sampling_on = false;
             sampling_settings.ctn_mag_sampling_on = false;
             sampling_settings.ctn_sampling_on = false;
         }
 }
-
-// K_THREAD_STACK_DEFINE(button_thread_stack, BUTTON_THREAD_STACK_SIZE);
-// static struct k_thread button_thread_data;
-
-// void button_thread() {
-//     int ret;
-
-//     if (!gpio_is_ready_dt(&button)) {
-//         printk("Error: button device %s is not ready\n", button.port->name);
-//         return;
-//     }
-
-// ret = gpio_pin_configure_dt(&button, GPIO_INPUT);
-// if (ret != 0) {
-//     printk("Error %d: failed to configure %s pin %d\n",
-//            ret, button.port->name, button.pin);
-//     return;
-// }
-
-// ret = gpio_pin_interrupt_configure_dt(&button, GPIO_INT_EDGE_TO_ACTIVE);
-// if (ret != 0) {
-//     printk("Error %d: failed to configure interrupt on %s pin %d\n",
-//            ret, button.port->name, button.pin);
-//     return;
-// }
-
-// gpio_init_callback(&button_cb_data, button_pressed, BIT(button.pin));
-// gpio_add_callback(button.port, &button_cb_data);
-// printk("Set up button at %s pin %d\n", button.port->name, button.pin);
-
-// bool continous = false;
-// while (1) {
-//     int val = gpio_pin_get_dt(&button);
-   
-//     if (val > 0) { // Button press
-//         if (!continous) { 
-//             continous = true;
-//             handle_button(continous);  
-//         }
-//     } else {  
-//         if (continous) { 
-//             continous = false;
-//             handle_button(continous);  
-//         }
-//     }
-
-//     k_sleep(K_MSEC(100));  
-// }
-// }
-
-// void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
-//     printk("Button pressed!\n");
-//     handle_button(true); // Handle button press
-// }
-
-// void configure_button_interrupt() {
-//     int ret;
-
-//     if (!gpio_is_ready_dt(&button)) {
-//         printk("Error: button device %s is not ready\n", button.port->name);
-//         return;
-//     }
-
-//     ret = gpio_pin_configure_dt(&button, GPIO_INPUT);
-//     if (ret != 0) {
-//         printk("Error %d: failed to configure %s pin %d\n",
-//                ret, button.port->name, button.pin);
-//         return;
-//     }
-
-//     ret = gpio_pin_interrupt_configure_dt(&button, GPIO_INT_EDGE_TO_ACTIVE);
-//     if (ret != 0) {
-//         printk("Error %d: failed to configure interrupt on %s pin %d\n",
-//                ret, button.port->name, button.pin);
-//         return;
-//     }
-
-//     gpio_init_callback(&button_cb_data, button_pressed, BIT(button.pin));
-//     gpio_add_callback(button.port, &button_cb_data);
-//     printk("Button interrupt configured on %s pin %d\n", button.port->name, button.pin);
-// }
-
-
-int main(void)
-{
-//  // Create the button thread
-//  k_thread_create(&button_thread_data, button_thread_stack,
-//     K_THREAD_STACK_SIZEOF(button_thread_stack),
-//     button_thread, NULL, NULL, NULL,
-//     BUTTON_THREAD_PRIORITY, 0, K_NO_WAIT);
-configure_button_interrupt();
-
  
- //   LOG_INF("Starting sensors");
 
+int main(void) {
+ 
+    configure_button_interrupt();
+
+  
  
     while (1) {
     

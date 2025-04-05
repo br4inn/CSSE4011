@@ -1,4 +1,4 @@
-# Install script for directory: /home/brain/repo/zephyr/subsys/logging/backends
+# Install script for directory: /home/brain/repo/zephyr/subsys/fs/ext2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

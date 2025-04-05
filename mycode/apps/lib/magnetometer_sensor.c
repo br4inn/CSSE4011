@@ -78,11 +78,11 @@ void read_mag_continous() {
         //   }
         if (ring_buf_put(&mag_ring_buf, (uint8_t *)&mag_val, sizeof(mag_val)) < sizeof(mag_val)) {
             LOG_ERR("Failed to put magnetometer data in ring buffer");
-        } else {
-            LOG_INF("Magnetometer data written to ring buffer: X=%d.%06d, Y=%d.%06d, Z=%d.%06d",
-                    mag_val.x.val1, mag_val.x.val2,
-                    mag_val.y.val1, mag_val.y.val2,
-                    mag_val.z.val1, mag_val.z.val2);
+        // } else {
+        //     LOG_INF("Magnetometer data written to ring buffer: X=%d.%06d, Y=%d.%06d, Z=%d.%06d",
+        //             mag_val.x.val1, mag_val.x.val2,
+        //             mag_val.y.val1, mag_val.y.val2,
+        //             mag_val.z.val1, mag_val.z.val2);
                   
         }
 
@@ -110,10 +110,10 @@ void read_mag_continous() {
 // }
 int get_latest_mag_val(struct mag_data *mag_val) {
     if (ring_buf_get(&mag_ring_buf, (uint8_t *)mag_val, sizeof(*mag_val)) == sizeof(*mag_val)) {
-        LOG_INF("Magnetometer data retrieved from ring buffer: X=%d.%06d, Y=%d.%06d, Z=%d.%06d",
-                mag_val->x.val1, mag_val->x.val2,
-                mag_val->y.val1, mag_val->y.val2,
-                mag_val->z.val1, mag_val->z.val2);
+        // LOG_INF("Magnetometer data retrieved from ring buffer: X=%d.%06d, Y=%d.%06d, Z=%d.%06d",
+        //         mag_val->x.val1, mag_val->x.val2,
+        //         mag_val->y.val1, mag_val->y.val2,
+        //         mag_val->z.val1, mag_val->z.val2);
         return 0;
     } else {
       //  LOG_ERR("No magnetometer data available in ring buffer");
