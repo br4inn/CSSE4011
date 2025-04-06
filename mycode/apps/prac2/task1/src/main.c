@@ -52,10 +52,7 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
 
 int global_sampling_rate = 2000; // Default  
 struct k_mutex sampling_rate_mutex;
-
-// Define the message queue
-//K_MSGQ_DEFINE(sampling_rate_msgq, MSGQ_MSG_SIZE, MSGQ_MAX_MSGS, 4);
-
+ 
 K_THREAD_STACK_DEFINE(sensor_stack, SENSOR_STACK_SIZE);
 struct k_thread temp_humid_sensor_thread, pressure_sensor_thread, mag_sensor_thread;
 
@@ -69,8 +66,7 @@ extern void read_pressure_continous();
 extern void read_mag_continous();
 extern int get_latest_press_val(int *press_value);
 extern int get_latest_mag_val(struct mag_data *mag_val);
-extern int set_rtc(int year, int month, int day, int hour, int min, int sec);
-//extern int get_date_time(void);
+extern int set_rtc(int year, int month, int day, int hour, int min, int sec); 
 
 
 extern const char *get_date_time(void);
@@ -162,8 +158,7 @@ static int generate_all_sensors_json(const char *did, const char *rtc_time, int 
         LOG_ERR("JSON encoding error: %d", ret);
         return ret;
     }
-
-   // shell_print("Generated JSON: %s", str);
+ 
     
     printf("%s\n", str);
     return 0;
@@ -171,8 +166,7 @@ static int generate_all_sensors_json(const char *did, const char *rtc_time, int 
 
 
 
-void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
-   // printk("Button pressed\n");
+void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins) { 
     bool pressed = sampling_settings.ctn_sampling_on;
     pressed = !pressed;
     handle_button(pressed);  
@@ -213,21 +207,31 @@ void all_sensors_json_generation_thread(void *arg1) {
 
 //LOG_INF("JSON generation thread started for DID: %s", sampling_data->did);
 
-while (sampling_settings.ctn_sampling_on) {
-    int temp_value, hum_value, press_value;
-    struct mag_data mag_val;
-
-    // Get data from all sensors
-    if (get_latest_temp_val(&temp_value) != 0) temp_value = -1;
-    if (get_latest_hum_val(&hum_value) != 0) hum_value = -1;
-    if (get_latest_press_val(&press_value) != 0) press_value = -1;
-    if (get_latest_mag_val(&mag_val) != 0) {
-        mag_val.x.val1 = mag_val.y.val1 = mag_val.z.val1 = -1;
-    }
+    while (sampling_settings.ctn_sampling_on) {
+        int temp_value, hum_value, press_value;
+        struct mag_data mag_val;
+ 
+        if (get_latest_temp_val(&temp_value) != 0) {
+            temp_value = -1;
+        }
+    
+        if (get_latest_hum_val(&hum_value) != 0) {
+            hum_value = -1;
+        }
+    
+        if (get_latest_press_val(&press_value) != 0) {
+            press_value = -1;
+        }
+    
+        if (get_latest_mag_val(&mag_val) != 0) {
+            mag_val.x.val1 = -1;
+            mag_val.y.val1 = -1;
+            mag_val.z.val1 = -1;
+        }
+    
 
     const char *datetime_str = get_date_time();
-
-    // Generate JSON for all sensors
+ 
     generate_all_sensors_json(sampling_data->did, datetime_str, temp_value, hum_value, press_value,
                               mag_val.x.val1, mag_val.y.val1, mag_val.z.val1);
 
@@ -297,8 +301,7 @@ void mag_json_generation_thread(void *arg1) {
         struct mag_data mag_val;
         if (get_latest_mag_val(&mag_val) == 0) {
             const char *datetime_str = get_date_time();
-
-            // Populate x, y, and z fields with correct values
+ 
             sampling_data->x = mag_val.x.val1;
             sampling_data->y = mag_val.y.val1;
             sampling_data->z = mag_val.z.val1;
@@ -341,7 +344,7 @@ static int generate_mag_json(const char *did, const char *rtc_time, int x, int y
 static int generate_temp_json(const char *did, const char *rtc_time, int value) {
     struct sampling temp_data;
     temp_data.did = did;
-    temp_data.rtc_time = rtc_time; // Use the formatted string
+    temp_data.rtc_time = rtc_time; 
 
      temp_data.value= value;
  

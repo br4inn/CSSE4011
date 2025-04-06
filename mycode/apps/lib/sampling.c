@@ -14,5 +14,4 @@ struct sampling_ctl sampling_settings = {
     .ctn_pressure_sampling_on = false,
     .ctn_mag_sampling_on = false,
 };
-
-//struct sampling sampling_data;
+ 
