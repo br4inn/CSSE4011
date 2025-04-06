@@ -10,7 +10,7 @@ static struct sensor_value mag_x, mag_y, mag_z;
 
 #define MAGNETOMETER_NODE DT_ALIAS(st_lis3mdl_magn)
 
-#define RING_BUFFER_SIZE 43 
+#define RING_BUFFER_SIZE 1000
  
 RING_BUF_DECLARE(mag_ring_buf, RING_BUFFER_SIZE);   
 
@@ -109,7 +109,7 @@ void read_mag_continous() {
 //     }
 // }
 int get_latest_mag_val(struct mag_data *mag_val) {
-    if (ring_buf_get(&mag_ring_buf, (uint8_t *)mag_val, sizeof(*mag_val)) == sizeof(*mag_val)) {
+    if (ring_buf_get(&mag_ring_buf, (int *)mag_val, sizeof(*mag_val)) == sizeof(*mag_val)) {
         // LOG_INF("Magnetometer data retrieved from ring buffer: X=%d.%06d, Y=%d.%06d, Z=%d.%06d",
         //         mag_val->x.val1, mag_val->x.val2,
         //         mag_val->y.val1, mag_val->y.val2,

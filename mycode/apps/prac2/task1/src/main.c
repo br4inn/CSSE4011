@@ -302,9 +302,10 @@ void mag_json_generation_thread(void *arg1) {
         if (get_latest_mag_val(&mag_val) == 0) {
             const char *datetime_str = get_date_time();
  
-            sampling_data->x = mag_val.x.val1;
-            sampling_data->y = mag_val.y.val1;
-            sampling_data->z = mag_val.z.val1;
+            sampling_data->x = mag_val.x.val2 / 100000;  
+            sampling_data->y = mag_val.y.val2 / 100000;
+            sampling_data->z = mag_val.z.val2 / 100000;
+
 
             generate_mag_json(sampling_data->did, datetime_str,
                               sampling_data->x, sampling_data->y, sampling_data->z);
