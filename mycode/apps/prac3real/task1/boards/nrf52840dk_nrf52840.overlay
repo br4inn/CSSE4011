@@ -1,0 +1,7 @@
+/ {
+    hc_sr04: hc_sr04 {
+        compatible = "hc-sr04";
+        trigger-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        echo-gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+    };
+};
