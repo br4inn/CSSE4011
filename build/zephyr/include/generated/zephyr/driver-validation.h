@@ -4,27 +4,17 @@
 		(K_SYSCALL_OBJ(ptr, K_OBJ_DRIVER_##driver_upper_case) || \
 		 K_SYSCALL_DRIVER_OP(ptr, driver_lower_case##_driver_api, op))
                 
-#define K_SYSCALL_DRIVER_ADC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, adc, ADC)
-
-#define K_SYSCALL_DRIVER_DMA(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, dma, DMA)
-
-#define K_SYSCALL_DRIVER_FLASH(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, flash, FLASH)
+#define K_SYSCALL_DRIVER_ENTROPY(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, entropy, ENTROPY)
 
 #define K_SYSCALL_DRIVER_GPIO(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, gpio, GPIO)
-
-#define K_SYSCALL_DRIVER_I2C(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, i2c, I2C)
-
-#define K_SYSCALL_DRIVER_I2C_TARGET(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, i2c_target, I2C_TARGET)
-
-#define K_SYSCALL_DRIVER_RESET(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, reset, RESET)
-
-#define K_SYSCALL_DRIVER_RTC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, rtc, RTC)
 
 #define K_SYSCALL_DRIVER_SENSOR(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, sensor, SENSOR)
 
 #define K_SYSCALL_DRIVER_SHARED_IRQ(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, shared_irq, SHARED_IRQ)
 
 #define K_SYSCALL_DRIVER_CRYPTO(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, crypto, CRYPTO)
+
+#define K_SYSCALL_DRIVER_ADC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, adc, ADC)
 
 #define K_SYSCALL_DRIVER_AUXDISPLAY(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, auxdisplay, AUXDISPLAY)
 
@@ -52,6 +42,8 @@
 
 #define K_SYSCALL_DRIVER_DISPLAY(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, display, DISPLAY)
 
+#define K_SYSCALL_DRIVER_DMA(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, dma, DMA)
+
 #define K_SYSCALL_DRIVER_EDAC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, edac, EDAC)
 
 #define K_SYSCALL_DRIVER_EEPROM(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, eeprom, EEPROM)
@@ -62,11 +54,11 @@
 
 #define K_SYSCALL_DRIVER_EMUL_SENSOR(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, emul_sensor, EMUL_SENSOR)
 
-#define K_SYSCALL_DRIVER_ENTROPY(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, entropy, ENTROPY)
-
 #define K_SYSCALL_DRIVER_ESPI(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, espi, ESPI)
 
 #define K_SYSCALL_DRIVER_ESPI_SAF(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, espi_saf, ESPI_SAF)
+
+#define K_SYSCALL_DRIVER_FLASH(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, flash, FLASH)
 
 #define K_SYSCALL_DRIVER_FPGA(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, fpga, FPGA)
 
@@ -77,6 +69,10 @@
 #define K_SYSCALL_DRIVER_HAPTICS(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, haptics, HAPTICS)
 
 #define K_SYSCALL_DRIVER_HWSPINLOCK(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, hwspinlock, HWSPINLOCK)
+
+#define K_SYSCALL_DRIVER_I2C(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, i2c, I2C)
+
+#define K_SYSCALL_DRIVER_I2C_TARGET(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, i2c_target, I2C_TARGET)
 
 #define K_SYSCALL_DRIVER_I2S(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, i2s, I2S)
 
@@ -114,7 +110,11 @@
 
 #define K_SYSCALL_DRIVER_REGULATOR(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, regulator, REGULATOR)
 
+#define K_SYSCALL_DRIVER_RESET(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, reset, RESET)
+
 #define K_SYSCALL_DRIVER_RETAINED_MEM(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, retained_mem, RETAINED_MEM)
+
+#define K_SYSCALL_DRIVER_RTC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, rtc, RTC)
 
 #define K_SYSCALL_DRIVER_SDHC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, sdhc, SDHC)
 

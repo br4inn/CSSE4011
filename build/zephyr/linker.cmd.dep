@@ -69,6 +69,7 @@ linker.cmd: \
  /home/brain/repo/zephyr/include/zephyr/linker/kobject-rom.ld \
  /home/brain/repo/zephyr/include/zephyr/linker/cplusplus-rom.ld \
  /home/brain/repo/build/zephyr/include/generated/snippets-ram-sections.ld \
+ /home/brain/repo/zephyr/include/../modules/segger/segger_rtt.ld \
  /home/brain/repo/zephyr/include/../arch/common/ramfunc.ld \
  /home/brain/repo/build/zephyr/include/generated/snippets-ramfunc-section.ld \
  /home/brain/repo/build/zephyr/include/generated/snippets-rwdata.ld \
@@ -77,6 +78,7 @@ linker.cmd: \
  /home/brain/repo/zephyr/include/zephyr/linker/cplusplus-ram.ld \
  /home/brain/repo/build/zephyr/include/generated/snippets-data-sections.ld \
  /home/brain/repo/build/zephyr/include/generated/snippets-sections.ld \
+ /home/brain/repo/zephyr/include/../soc/nordic/common/platform_init.ld \
  /home/brain/repo/zephyr/include/zephyr/linker/intlist.ld \
  /home/brain/repo/zephyr/include/zephyr/linker/debug-sections.ld \
  /home/brain/repo/zephyr/include/zephyr/linker/common-noinit.ld \

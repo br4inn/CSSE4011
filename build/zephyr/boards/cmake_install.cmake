@@ -39,6 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/brain/repo/build/zephyr/boards/nordic/nrf52840dk/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/brain/repo/build/zephyr/boards/shields/cmake_install.cmake")
 endif()
 

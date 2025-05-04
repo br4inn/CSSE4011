@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/brain/repo/build/zephyr/soc/soc/stm32l475xx/cmake_install.cmake")
+  include("/home/brain/repo/build/zephyr/soc/soc/nrf52840/cmake_install.cmake")
 endif()
 

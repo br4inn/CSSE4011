@@ -3,7 +3,7 @@
 /home/brain/repo/build/Kconfig/arch/Kconfig
 /home/brain/repo/build/Kconfig/boards/Kconfig
 /home/brain/repo/build/Kconfig/boards/Kconfig.defconfig
-/home/brain/repo/build/Kconfig/boards/Kconfig.disco_l475_iot1
+/home/brain/repo/build/Kconfig/boards/Kconfig.nrf52840dk
 /home/brain/repo/build/Kconfig/soc/Kconfig
 /home/brain/repo/build/Kconfig/soc/Kconfig.defconfig
 /home/brain/repo/build/Kconfig/soc/Kconfig.soc
@@ -59,6 +59,8 @@
 /home/brain/repo/zephyr/arch/xtensa/Kconfig
 /home/brain/repo/zephyr/boards/Kconfig
 /home/brain/repo/zephyr/boards/Kconfig.v2
+/home/brain/repo/zephyr/boards/nordic/nrf52840dk/Kconfig.defconfig
+/home/brain/repo/zephyr/boards/nordic/nrf52840dk/Kconfig.nrf52840dk
 /home/brain/repo/zephyr/boards/shields/abrobot_esp32c3_oled/Kconfig.shield
 /home/brain/repo/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.defconfig
 /home/brain/repo/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.shield
@@ -195,8 +197,6 @@
 /home/brain/repo/zephyr/boards/shields/x_nucleo_iks4a1/Kconfig.shield
 /home/brain/repo/zephyr/boards/shields/x_nucleo_wb05kn1/Kconfig.defconfig
 /home/brain/repo/zephyr/boards/shields/x_nucleo_wb05kn1/Kconfig.shield
-/home/brain/repo/zephyr/boards/st/disco_l475_iot1/Kconfig.defconfig
-/home/brain/repo/zephyr/boards/st/disco_l475_iot1/Kconfig.disco_l475_iot1
 /home/brain/repo/zephyr/drivers/Kconfig
 /home/brain/repo/zephyr/drivers/adc/Kconfig
 /home/brain/repo/zephyr/drivers/adc/Kconfig.ad4114

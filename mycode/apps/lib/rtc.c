@@ -43,7 +43,7 @@ const char *get_date_time(void)
         LOG_INF("Setting default time\n");
 
         // Set default time
-        set_date_time(rtc, 2025, 1, 1, 0, 0, 0);
+        set_date_time(rtc, 2025, 5, 4, 10, 10, 0);
 
         // Retry getting the time
         ret = rtc_get_time(rtc, &tm);
@@ -73,5 +73,32 @@ int set_rtc(int year, int month, int day, int hour, int min, int sec) {
     return 0;
 
 }
-  
- 
+
+#include <time.h> // For time(), localtime()
+
+int set_rtc_to_system_time(void) {
+    if (!device_is_ready(rtc)) {
+        printk("Device is not ready\n");
+        return -1;
+    }
+
+    // Get the current system time
+    time_t now = time(NULL);
+    if (now == (time_t)-1) {
+        printk("Failed to get system time\n");
+        return -1;
+    }
+
+    // Convert to local time structure
+    struct tm *local_time = localtime(&now);
+    if (!local_time) {
+        printk("Failed to convert system time to local time\n");
+        return -1;
+    }
+
+    // Set the RTC with the current system time
+    return set_date_time(rtc, local_time->tm_year + 1900, local_time->tm_mon + 1,
+                         local_time->tm_mday, local_time->tm_hour, local_time->tm_min,
+                         local_time->tm_sec);
+}
+
