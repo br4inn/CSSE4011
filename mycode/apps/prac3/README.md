@@ -1,7 +1,7 @@
 Sniffer 
 ________________________________________________________________________________
 in:
-(env) adnaanbuksh@AdnaanB:~/csse4011/repo/tools/nrfutil$ 
+(env)  ~/csse4011/repo/tools/nrfutil$ 
 
 add:
 vim ~/.bashrc
