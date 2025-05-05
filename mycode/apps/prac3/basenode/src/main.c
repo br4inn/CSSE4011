@@ -16,13 +16,9 @@
 #include <string.h>
 #include <kalman_filter.h>
 #include <math.h>
-#include <zephyr/sys/dlist.h>
- 
+
 #define ROWS 8
 #define COLS 2
-
-#define TX 60
-#define ALPHA 2.0
 
 char* mobile_mac = "D1:31:A2:EB:63:2A";
 char* ultra_mac = "CF:E1:0A:1C:80:C7";
@@ -33,8 +29,8 @@ typedef struct {
     uint16_t minor;
     char address[18];
     float x, y;
-	char left_neighbour;
-	char right_neighbour;
+	char left;
+	char right;
 } BeaconInfo;
 
 typedef struct {
@@ -56,33 +52,40 @@ struct JSONPosData {
 };
 
 static BeaconInfo beacon_nodes[13] = {
-	{ .name = 'A', .address = "F5:75:FE:85:34:67", .major = 0,  .minor = 0, .x = 0, .y = 0, .left_neighbour = '-', .right_neighbour = '-' },
-	{ .name = 'B', .address = "E5:73:87:06:1E:86", .major = 0, .minor = 0, .x = 1.5, .y = 0, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'C', .address = "CA:99:9E:FD:98:B1", .major = 0, .minor = 0, .x = 4, .y = 0, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'D', .address = "CB:1B:89:82:FF:FE", .major = 0, .minor = 0, .x = 4, .y = 2, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'E', .address = "D4:D2:A0:A4:5C:AC", .major = 0, .minor = 0, .x = 4, .y = 4, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'F', .address = "C1:13:27:E9:B7:7C", .major = 0,  .minor = 0, .x = 1.5, .y = 4, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'G', .address = "F1:04:48:06:39:A0", .major = 0, .minor = 0, .x = 0, .y = 4, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'H', .address = "CA:0C:E0:DB:CE:60", .major = 0, .minor = 0, .x = 0, .y = 2, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'I', .address = "D4:7F:D4:7C:20:13", .major = 0, .minor = 0, .x = 4.5, .y = 5, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'J', .address = "F7:0B:21:F1:C8:E1", .major = 0,  .minor = 0, .x = 6, .y = 0, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'K', .address = "FD:E0:8D:FA:3E:4A", .major = 0, .minor = 0, .x = 6, .y = 2, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'L', .address = "EE:32:F7:28:FA:AC", .major = 0, .minor = 0, .x = 6, .y = 4, .left_neighbour = '-', .right_neighbour = '-'  },
-	{ .name = 'M', .address = "EA:E4:EC:C2:0C:18", .major = 0, .minor = 0, .x = 4.5, .y = 4, .left_neighbour = '-', .right_neighbour = '-'  }
+	{ .name = 'A', .address = "F5:75:FE:85:34:67", .major = 0,  .minor = 0, .x = 0, .y = 0, .left = '-', .right = '-' },
+	{ .name = 'B', .address = "E5:73:87:06:1E:86", .major = 0, .minor = 0, .x = 1.5, .y = 0, .left = '-', .right = '-' },
+	{ .name = 'C', .address = "CA:99:9E:FD:98:B1", .major = 0, .minor = 0, .x = 3, .y = 0 , .left = '-', .right = '-'},
+	{ .name = 'D', .address = "CB:1B:89:82:FF:FE", .major = 0, .minor = 0, .x = 3, .y = 2 , .left = '-', .right = '-'},
+	{ .name = 'E', .address = "D4:D2:A0:A4:5C:AC", .major = 0, .minor = 0, .x = 3, .y = 4 , .left = '-', .right = '-'},
+	{ .name = 'F', .address = "C1:13:27:E9:B7:7C", .major = 0,  .minor = 0, .x = 1.5, .y = 4 , .left = '-', .right = '-'},
+	{ .name = 'G', .address = "F1:04:48:06:39:A0", .major = 0, .minor = 0, .x = 0, .y = 4 , .left = '-', .right = '-'},
+	{ .name = 'H', .address = "CA:0C:E0:DB:CE:60", .major = 0, .minor = 0, .x = 0, .y = 2 , .left = '-', .right = '-'},
+	{ .name = 'I', .address = "D4:7F:D4:7C:20:13", .major = 0, .minor = 0, .x = 4.5, .y = 0 , .left = '-', .right = '-'},
+	{ .name = 'J', .address = "F7:0B:21:F1:C8:E1", .major = 0,  .minor = 0, .x = 6, .y = 0 , .left = '-', .right = '-'},
+	{ .name = 'K', .address = "FD:E0:8D:FA:3E:4A", .major = 0, .minor = 0, .x = 6, .y = 2 , .left = '-', .right = '-'},
+	{ .name = 'L', .address = "EE:32:F7:28:FA:AC", .major = 0, .minor = 0, .x = 6, .y = 4 , .left = '-', .right = '-'},
+	{ .name = 'M', .address = "EA:E4:EC:C2:0C:18", .major = 0, .minor = 0, .x = 4.5, .y = 4 , .left = '-', .right = '-'}
 };
 
 static sys_dlist_t beacon_list;
 
 struct k_fifo pos_queue;
 
+K_MUTEX_DEFINE(dlist_mutex);
+K_MUTEX_DEFINE(nodes_mutex);
+K_MUTEX_DEFINE(rssi_mutex);
+K_MUTEX_DEFINE(ultra_mutex);
+
 int8_t rssi_values[13] = {[0 ... 12] = -120};
 
 static int dist = -1;
 static int ultra_node_index = -1;
 
-float rssi_to_distance(int rssi) {
-    float transmit = -TX;
-    return powf(10.0, (transmit - rssi) / (10.0 * ALPHA));
+#define ALPHA 2.0
+
+float rssi_to_distance(int index, int rssi) {
+    float t = -60.0;
+    return powf(10.0, (t - rssi) / (10.0 * ALPHA));
 }
 
 void calc_least_squares(float A[ROWS][COLS], float B[ROWS], float* x, float* y) {
@@ -153,42 +156,55 @@ static int cmd_add(const struct shell *sh, size_t argc, char **argv) {
 		shell_error(sh, "Invalid major/minor value");
 		return -EINVAL;
 	}
-
+	
+	k_mutex_lock(&nodes_mutex, K_FOREVER);
 	beacon_nodes[index].major = major;
 	beacon_nodes[index].minor = minor;
 
 	BeaconNode* node = k_malloc(sizeof(BeaconNode));
 	node->info = beacon_nodes[index];
+	k_mutex_unlock(&nodes_mutex);
 
+	k_mutex_lock(&dlist_mutex, K_FOREVER);
     sys_dlist_append(&beacon_list, &node->node);
 
 	BeaconNode *prev = CONTAINER_OF(sys_dlist_peek_prev(&beacon_list, &node->node), BeaconNode, node);
 	BeaconNode *next = CONTAINER_OF(sys_dlist_peek_next(&beacon_list, &node->node), BeaconNode, node);
 
     if (prev) {
-        node->info.left_neighbour = prev->info.name;
-        prev->info.right_neighbour = node->info.name;
+        node->info.left = prev->info.name;
+        prev->info.right = node->info.name;
     } else {
-        node->info.left_neighbour = '-';
+        node->info.left = '-';
     }
 
     if (next) {
-        node->info.right_neighbour = next->info.name;
-        next->info.left_neighbour = node->info.name;
+        node->info.right = next->info.name;
+        next->info.left = node->info.name;
     } else {
-        node->info.right_neighbour = '-';
+        node->info.right = '-';
     }
 
     shell_print(sh, "Beacon %c added.", node->info.name);
+	k_mutex_unlock(&dlist_mutex);
     return 0;
 }
 
-static void cmd_add_ultra(const struct shell *sh, size_t argc, char **argv) {
+static int cmd_add_ultra(const struct shell *sh, size_t argc, char **argv) {
+	if (argv[1][0] == 'X') {
+		k_mutex_lock(&ultra_mutex, K_FOREVER);
+		shell_print(sh, "Ultrasonic node cleared");
+		ultra_node_index = -1;
+		k_mutex_unlock(&ultra_mutex);
+		return 0;
+	}
 	if (argv[1][0] < 'A' || argv[1][0] > 'M') {
 		shell_error(sh, "Unknown beacon name");
         return -EINVAL;
 	}
+	k_mutex_lock(&ultra_mutex, K_FOREVER);
 	ultra_node_index = argv[1][0] - 0x41;
+	k_mutex_unlock(&ultra_mutex);
     shell_print(sh, "Ultrasonic node set to %c", argv[1][0]);
     return 0;
 }
@@ -197,22 +213,33 @@ static int cmd_list(const struct shell *sh, size_t argc, char **argv) {
     if (argc == 2 && strcmp(argv[1], "-a") == 0) {
         shell_print(sh, "Registered iBeacons:");
         BeaconNode *node;
+		k_mutex_lock(&dlist_mutex, K_FOREVER);
         SYS_DLIST_FOR_EACH_CONTAINER(&beacon_list, node, node) {
-            shell_print(sh, "  %c: MAC=%s MAJOR=%d MINOR=%d POS=(%.2f, %.2f) LEFT=%c RIGHT=%c",
+			char x_pos[10], y_pos[10];
+			snprintf(x_pos, 10, "%d.%02d", (int) node->info.x, (int)((node->info.x - ((int) node->info.x)) * 100));
+			snprintf(y_pos, 10, "%d.%02d", (int) node->info.y, (int)((node->info.y - ((int) node->info.y)) * 100));
+            shell_print(sh, "  %c: MAC=%s MAJOR=%d MINOR=%d POS=(%s, %s) LEFT=%c RIGHT=%c",
                 node->info.name, node->info.address, node->info.major, node->info.minor,
-                node->info.x, node->info.y, node->info.left_neighbour, node->info.right_neighbour);
+                x_pos, y_pos, node->info.left, node->info.right);
         }
+		k_mutex_unlock(&dlist_mutex);
     } else if (argc == 2 && strlen(argv[1]) == 1 && argv[1][0] >= 'A' && argv[1][0] <= 'M') {
         char name = argv[1][0];
         BeaconNode *node;
+		k_mutex_lock(&dlist_mutex, K_FOREVER);
         SYS_DLIST_FOR_EACH_CONTAINER(&beacon_list, node, node) {
+			char x_pos[10], y_pos[10];
+			snprintf(x_pos, 10, "%d.%02d", (int) node->info.x, (int)((node->info.x - ((int) node->info.x)) * 100));
+			snprintf(y_pos, 10, "%d.%02d", (int) node->info.y, (int)((node->info.y - ((int) node->info.y)) * 100));
             if (node->info.name == name) {
-                shell_print(sh, "%c: MAC=%s MAJOR=%d MINOR=%d POS=(%.2f, %.2f) LEFT=%c RIGHT=%c",
+                shell_print(sh, "%c: MAC=%s MAJOR=%d MINOR=%d POS=(%s, %s) LEFT=%c RIGHT=%c",
                     node->info.name, node->info.address, node->info.major, node->info.minor,
-                    node->info.x, node->info.y, node->info.left_neighbour, node->info.right_neighbour);
+                    x_pos, y_pos, node->info.left, node->info.right);
+				k_mutex_unlock(&dlist_mutex);
                 return 0;
             }
         }
+		k_mutex_unlock(&dlist_mutex);
         shell_error(sh, "Beacon %c not found", name);
         return -ENOENT;
     } else {
@@ -231,10 +258,12 @@ static int cmd_clear(const struct shell *sh, size_t argc, char **argv) {
 
     if (strcmp(argv[1], "-a") == 0) {
         BeaconNode *node, *tmp;
+		k_mutex_lock(&dlist_mutex, K_FOREVER);
         SYS_DLIST_FOR_EACH_CONTAINER_SAFE(&beacon_list, node, tmp, node) {
             sys_dlist_remove(&node->node);
             k_free(node);
         }
+		k_mutex_unlock(&dlist_mutex);
         shell_print(sh, "Cleared all nodes.");
         return 0;
     }
@@ -246,25 +275,27 @@ static int cmd_clear(const struct shell *sh, size_t argc, char **argv) {
     }
 
     BeaconNode *node, *tmp;
+	k_mutex_lock(&dlist_mutex, K_FOREVER);
     SYS_DLIST_FOR_EACH_CONTAINER_SAFE(&beacon_list, node, tmp, node) {
         if (node->info.name == target) {
             BeaconNode *prev = CONTAINER_OF(sys_dlist_peek_prev(&beacon_list, &node->node), BeaconNode, node);
 			BeaconNode *next = CONTAINER_OF(sys_dlist_peek_next(&beacon_list, &node->node), BeaconNode, node);
 
             if (prev) {
-                prev->info.right_neighbour = next ? next->info.name : '-';
+                prev->info.right = next ? next->info.name : '-';
             }
             if (next) {
-                next->info.left_neighbour = prev ? prev->info.name : '-';
+                next->info.left = prev ? prev->info.name : '-';
             }
 
             sys_dlist_remove(&node->node);
             k_free(node);
             shell_print(sh, "Removed beacon %c.", target);
+			k_mutex_unlock(&dlist_mutex);
             return 0;
         }
     }
-
+	k_mutex_unlock(&dlist_mutex);
     shell_error(sh, "Beacon %c not found.", target);
     return -ENOENT;
 }
@@ -278,8 +309,6 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 	struct net_buf_simple *ad) {
 	char addr_str[BT_ADDR_LE_STR_LEN];
 	bt_addr_le_to_str(addr, addr_str, sizeof(addr_str));
-	// printk("Device found: %s (RSSI %d), type %u, AD data len %u\n",
-	//        addr_str, rssi, type, ad->len);
 	
 	char mac_addr[18];
 	strncpy(mac_addr, addr_str, 17);
@@ -288,11 +317,11 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 	int cmp = strcmp(mac_addr, mobile_mac);
 	if (cmp == 0) {
 		if (ad->len == 30) {
+			k_mutex_lock(&rssi_mutex, K_FOREVER);
 			for (int i = 9; i < 21; i++) {
-				//printk("Beacon %c-RSSI %d, ", 0x41 + i - 9, (int8_t) ad->data[i]);
 				rssi_values[i - 9] = (int8_t) ad->data[i];
 			}
-			//printk("\n");
+			k_mutex_unlock(&rssi_mutex);
 			return;
 		}
 	}
@@ -300,8 +329,9 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 	cmp = strcmp(mac_addr, ultra_mac);
 	if (cmp == 0) {
 		if (ad->len > 13) {
+			k_mutex_lock(&ultra_mutex, K_FOREVER);
 			dist = (int8_t) ad->data[13];
-			//printk("Distance: %d cm\n", dist);
+			k_mutex_unlock(&ultra_mutex);
 		}
 	}
 }
@@ -329,28 +359,15 @@ void thread_json(void) {
 		JSON_OBJ_DESCR_PRIM(struct JSONPosData, tot_dist, JSON_TOK_NUMBER),
     };
 
-	// bool exists[13] = {[0 ... 12] = false};
-	// int exists_len = 0;
-
     while (1) {
         recv = k_fifo_get(&pos_queue, K_FOREVER);
-
-		// BeaconNode *node, *tmp;
-    	// SYS_SLIST_FOR_EACH_CONTAINER_SAFE(&beacon_list, node, tmp, node) {
-        // 	int index = node->info.name - 0x41;
-		// 	exists[index] = true;
-		// 	exists_len += 1;
-    	// }
-
-		// if (exists_len != 8) {
-		// 	continue;
-		// }
 
 		int x = (int)(recv->x * 100);
 		int y = (int)(recv->y * 100);
 		int vel = (int)(recv->vel * 100);
 		int tot_dist = (int)(recv->tot_dist * 100);
 
+		k_mutex_lock(&rssi_mutex, K_FOREVER);
 		struct JSONPosData data = {
 			.A = rssi_values[0],
 			.B = rssi_values[1],
@@ -370,6 +387,7 @@ void thread_json(void) {
 			.vel = vel,
 			.tot_dist = tot_dist
 		};
+		k_mutex_unlock(&rssi_mutex);
 
 		char jsonBuffer[300];
         int ret = json_obj_encode_buf(allPosData,
@@ -387,24 +405,19 @@ void thread_json(void) {
 }
 
 void thread_pos(void) {
-	int distances[13] = {[0 ... 12] = -1};
+	float distances[13] = {[0 ... 12] = -1.0};
 	bool exists[13] = {[0 ... 12] = false};
-	for (int i = 0; i < 8; i++) {
-		exists[i] = true;
-	}
 
     float x, y;
 	float x_hat[4] = {0, 0, 0, 0};
     float cov[4][4] = {
-        {1, 0, 0, 0},
-        {0, 1, 0, 0},
-        {0, 0, 1, 0},
-        {0, 0, 0, 1}
+        {10, 0, 0, 0},
+        {0, 10, 0, 0},
+        {0, 0, 10, 0},
+        {0, 0, 0, 10}
     };
 
-	float meas_err = 0.05;
-
-	// send x and y to fifo
+	// For sending x and y to fifo
 	struct data_item_t p = {
 		.x = 0,
 		.y = 0,
@@ -413,60 +426,74 @@ void thread_pos(void) {
 	};
 
 	while (1) {
-		k_msleep(500);
+		k_msleep(100);
 
-		// int exists_len = 0;
-		// if (exists_len != 8) {
-		// 	BeaconNode *node, *tmp;
-    	// 	SYS_SLIST_FOR_EACH_CONTAINER_SAFE(&beacon_list, node, tmp, node) {
-        // 		int index = node->info.name - 0x41;
-		// 		exists[index] = true;
-		// 		exists_len += 1;
-    	// 	}
-		// }
+		k_mutex_lock(&dlist_mutex, K_FOREVER);
+		int exists_len = 0;
+		if (exists_len != 8) {
+			BeaconNode *node, *tmp;
+    		SYS_DLIST_FOR_EACH_CONTAINER_SAFE(&beacon_list, node, tmp, node) {
+        		int index = node->info.name - 0x41;
+				exists[index] = true;
+				exists_len += 1;
+    		}
+		}
+		k_mutex_unlock(&dlist_mutex);
 
+		if (exists_len != 8) {
+			continue;
+		}
+
+		k_mutex_lock(&rssi_mutex, K_FOREVER);
+		
 		for (int i = 0; i < 13; i++) {
 			if (exists[i] == true) {
-				distances[i] = rssi_to_distance(rssi_values[i]);
+				distances[i] = rssi_to_distance(i, rssi_values[i]);
 			} else {
 				distances[i] = -1;
 			}
 		}
-
-		// if (exists_len != 8) {
-		// 	//printk("len: %d\n", exists_len);
-		// 	continue;
-		// }
 		
 		// form matrix A and B
 		int node_num = 0;
 		float A[ROWS][COLS], B[ROWS];
+		int min_index = -1;
 		for (int i = 0; i < 13; i++) {
 
 			if (exists[i] != true) {
 				continue;
 			}
 
-			A[node_num][0] = 2 * (beacon_nodes[ROWS - 1].x - beacon_nodes[i].x);
-			A[node_num][1] = 2 * (beacon_nodes[ROWS - 1].y - beacon_nodes[i].y);
-	
-			B[node_num] = powf(distances[i], 2) - powf(distances[ROWS - 1], 2) - powf(beacon_nodes[i].x, 2) - 
-				powf(beacon_nodes[i].y, 2) + powf(beacon_nodes[ROWS - 1].x, 2) + powf(beacon_nodes[ROWS - 1].y, 2);
+			if (min_index == -1) {
+				min_index = i;
+			}
+			
+			A[node_num][0] = 2 * (beacon_nodes[i].x - beacon_nodes[min_index].x);
+        	A[node_num][1] = 2 * (beacon_nodes[i].y - beacon_nodes[min_index].y);
+
+       		B[node_num] = powf(distances[min_index], 2) - powf(distances[i], 2) - powf(beacon_nodes[min_index].x, 2) - 
+            	powf(beacon_nodes[min_index].y, 2) + powf(beacon_nodes[i].x, 2) + powf(beacon_nodes[i].y, 2);
 			
 			node_num += 1;
 		}
 
+		k_mutex_unlock(&rssi_mutex);
+
 		calc_least_squares(A, B, &x, &y);
 
 		// calc error
-		
+		float x_var = 4.0;
+		float y_var = x_var;
+		float co_var = 0;
 
 		float pos[2] = {x, y};
-		kalman_filter(x_hat, cov, meas_err, pos);
+		
+		kalman_filter(x_hat, cov, x_var, y_var, co_var, pos);
 
+		k_mutex_lock(&ultra_mutex, K_FOREVER);
 		if (dist != -1 && ultra_node_index != -1) {
 			// find ultrasound coord
-			float ultra_dist = dist / 100;
+			float ultra_dist = dist / 100.0;
 
 			char node = ultra_node_index + 0x41;
 			
@@ -482,22 +509,22 @@ void thread_pos(void) {
 			} else if (node == 'M') {
 				pos[0] = 4.5;
 				pos[1] = 4 - ultra_dist;
+			} else if (node == 'H') {
+				pos[0] = ultra_dist;
+				pos[1] = 2.0;
 			}
-			kalman_filter(x_hat, cov, meas_err, pos);
+			kalman_filter(x_hat, cov, x_var, y_var, co_var, pos);
 		}
+		k_mutex_unlock(&ultra_mutex);
 
 		p.x = x_hat[0];
 		p.y = x_hat[1];
 		p.vel = sqrtf(powf(x_hat[2], 2.0) + powf(x_hat[3], 2.0));
 		p.tot_dist += sqrtf(powf(x_hat[0], 2.0) + powf(x_hat[1], 2.0));
 
-		// printk("%d.%.6d ", (int)p.x, (int)((p.x-(int)p.x)*1000000));
-		// printk("%d.%.6d ", (int)p.y, (int)((p.y-(int)p.y)*1000000));
-		// printk("%d.%.6d ", (int)p.vel, (int)((p.vel-(int)p.vel)*1000000));
-		// printk("%d.%.6d ", (int)p.tot_dist, (int)((p.tot_dist-(int)p.tot_dist)*1000000));
-		// printk("\n");
-
-		//printk("%f %f %f %f\n", p.x, p.y, p.vel, p.tot_dist);
+		if (p.x > 3 || p.x < 0 || p.y < 0 || p.y > 4) {
+			continue;
+		} 
 		k_fifo_put(&pos_queue, &p);
 	}
 }
@@ -516,7 +543,7 @@ int main(void) {
 
 	struct bt_le_scan_param scan_param = {
 		.type       = BT_LE_SCAN_TYPE_PASSIVE,
-		.options    = BT_LE_SCAN_OPT_FILTER_DUPLICATE,
+		.options    = BT_LE_SCAN_OPT_NONE,
 		.interval   = BT_GAP_SCAN_FAST_INTERVAL,
 		.window     = BT_GAP_SCAN_FAST_WINDOW,
 	};
@@ -528,8 +555,8 @@ int main(void) {
 	}
 	printk("Started scanning...\n");
 
-	sys_dlist_init(&beacon_list);
 	k_fifo_init(&pos_queue);
+	sys_dlist_init(&beacon_list);
 }
 
 K_THREAD_DEFINE(pos_id, 2048, thread_pos,

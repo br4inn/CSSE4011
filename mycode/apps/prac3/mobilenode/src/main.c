@@ -9,12 +9,13 @@
 #include <zephyr/bluetooth/conn.h>
 #include <zephyr/bluetooth/hci.h>
 #include <string.h>
+#include <thingy52_gas_colour.h>
 
 #ifndef IBEACON_RSSI
 #define IBEACON_RSSI 0xc8
 #endif
 
-static const char* beacon_mac[12] = {
+static const char* beacon_mac[13] = {
 	"F5:75:FE:85:34:67", // A
 	"E5:73:87:06:1E:86", // B
 	"CA:99:9E:FD:98:B1", // C
@@ -26,27 +27,11 @@ static const char* beacon_mac[12] = {
 	"D4:7F:D4:7C:20:13", // I
 	"F7:0B:21:F1:C8:E1", // J
 	"FD:E0:8D:FA:3E:4A", // K
-	"EE:32:F7:28:FA:AC" // L
+	"EE:32:F7:28:FA:AC", // L
+	"EA:E4:EC:C2:0C:18" // M
 };
 
-static int8_t beacon_rssi[12] = {
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120,
-	-120
-};
-
-static const struct bt_data sd[] = {
-	BT_DATA(BT_DATA_NAME_COMPLETE, CONFIG_BT_DEVICE_NAME, sizeof(CONFIG_BT_DEVICE_NAME) - 1),
-};
+static int8_t beacon_rssi[13] = {[0 ... 12] = -120};
 
 // Packet
 static const struct bt_data ad[] = {
@@ -69,12 +54,13 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 	char addr_str[BT_ADDR_LE_STR_LEN];
 	bt_addr_le_to_str(addr, addr_str, sizeof(addr_str));
 	
-	char mac_addr[17];
+	char mac_addr[18];
 	for (int i = 0; i < 17; i++) {
 		mac_addr[i] = addr_str[i];
 	}
+	mac_addr[17] = '\0';
 
-	for (int i = 0; i < 12; i++) {
+	for (int i = 0; i < 13; i++) {
 		int cmp = strcmp(mac_addr, beacon_mac[i]);
 		if (cmp == 0) {
 			// Found valid beacon mac address
@@ -90,6 +76,13 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 
 int main(void) {
 	int err;
+
+	// init RGB led
+	err = thingy52_rgb_init();
+	if (err) {
+		printk("Thingy52 rgb failed to init (err %d)\n", err);
+	}
+	thingy52_rgb_colour_set(MAGENTA);
 
 	/* Initialize the Bluetooth Subsystem */
 	err = bt_enable(NULL);
@@ -141,7 +134,8 @@ int main(void) {
 					  beacon_rssi[9],
 					  beacon_rssi[10],
 					  beacon_rssi[11],
-					  0x00, 0x00, 0x00, 0x00,
+					  beacon_rssi[12],
+					  0x00, 0x00, 0x00,
 					  0x00, 0x00, 0x00, 0x00,
 					  IBEACON_RSSI) /* Calibrated RSSI @ 1m */
 		};
@@ -150,39 +144,7 @@ int main(void) {
 		if (data) {
 			printk("(err %d)\n", data);
 		}
+
+		k_msleep(50);
 	}
-}
-
-
-// keeping bottom stuff here for now
-
-// single linked list
-struct ibeacon_node_list {
-    sys_snode_t node;  
-    char name[16];
-    bt_addr_t address;
-    uint16_t major;
-    uint16_t minor;
-    uint8_t x;
-    uint8_t y;
-};
-
-
-
-
-void add_beacons(void) {
-    static struct ibeacon_node beacon_nodes[] = {
-        { .name = "4011-A", .address = { { 0xF5, 0x75, 0xFE, 0x85, 0x34, 0x67 } }, .major = 2753,  .minor = 32998, .x = 0, .y = 0 },
-        { .name = "4011-B", .address = { { 0xE5, 0x73, 0x87, 0x06, 0x1E, 0x86 } }, .major = 32975, .minor = 20959, .x = 2, .y = 0 },
-        { .name = "4011-C", .address = { { 0xCA, 0x99, 0x9E, 0xFD, 0x98, 0xB1 } }, .major = 26679, .minor = 40363, .x = 4, .y = 0 },
-        { .name = "4011-D", .address = { { 0xCB, 0x1B, 0x89, 0x82, 0xFF, 0xFE } }, .major = 41747, .minor = 38800, .x = 4, .y = 2 },
-        { .name = "4011-E", .address = { { 0xD4, 0xD2, 0xA0, 0xA4, 0x5C, 0xAC } }, .major = 30679, .minor = 51963, .x = 4, .y = 4 },
-        { .name = "4011-F", .address = { { 0xC1, 0x13, 0x27, 0xE9, 0xB7, 0x7C } }, .major = 6195,  .minor = 18394, .x = 2, .y = 4 },
-        { .name = "4011-G", .address = { { 0xF1, 0x04, 0x48, 0x06, 0x39, 0xA0 } }, .major = 30525, .minor = 30544, .x = 0, .y = 4 },
-        { .name = "4011-H", .address = { { 0xCA, 0x0C, 0xE0, 0xDB, 0xCE, 0x60 } }, .major = 57395, .minor = 28931, .x = 0, .y = 2 },
-    };
-
-    for (int i = 0; i < ARRAY_SIZE(beacon_nodes); i++) {
-        sys_slist_append(&ibeacon_list, &beacon_nodes[i].node);
-    }
 }

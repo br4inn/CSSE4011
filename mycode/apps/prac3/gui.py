@@ -6,8 +6,7 @@ import matplotlib.image as mpimg
 import numpy as np
 from matplotlib.widgets import Button, TextBox
 import matplotlib.animation as animation
-import threading  # Add this import
-import time
+ 
 import requests
  
 
@@ -27,27 +26,8 @@ class TrackingModel:
         else:
             self.ser = None
 
-    def send_fake_data(self):
-        # Simulate data for nodes A to M in an infinite loop
-        node = 'A'  # Just for one node, this can be extended
-        rssi = random.randint(-100, -30)  # Random RSSI between -100 and -30
-        avg_vel = 0  # Starting velocity
-        dist_travelled = 0  # Starting distance
-
-        while True:
-            # Increment distance and velocity
-            avg_vel = round(random.uniform(0, 5), 2)  # Random velocity between 0 and 5 m/s
-            dist_travelled += avg_vel  # Add velocity to total distance
-
-            # Send the fake data to InfluxDB
-            self.send_to_influx(node, rssi, avg_vel, dist_travelled)
-            print(f"Fake data sent for Node {node}: RSSI={rssi}, Avg Vel={avg_vel}, Dist Travelled={dist_travelled}")
-
-            time.sleep(1)  # Send data every second (you can adjust the delay)
-
-
     def send_to_influx(self, node, rssi, avg_vel, dist_travelled):
-        # Format the data using InfluxDB line protocol
+    # Format the data using InfluxDB line protocol
         payload = f"node_data,node={node} rssi={rssi},avg_vel={avg_vel},dist_travelled={dist_travelled}"
         print(f"Sending to InfluxDB: {payload}")
 
@@ -59,7 +39,6 @@ class TrackingModel:
         except Exception as e:
             print(f"Failed to send data to InfluxDB: {e}")
 
-
     def get_position(self):
         if self.simulate:
             x = round(random.uniform(0, 3), 2)
@@ -68,8 +47,27 @@ class TrackingModel:
         else:
             try:
                 line = self.ser.readline().decode().strip()
+                print(f"[Serial] {line}")  # Debug
                 data = json.loads(line)
-                return data.get("x", 0) / 100.0, data.get("y", 0) / 100.0
+
+                # Extract required fields
+                x = data.get("x", 0) / 100.0
+                y = 4 - data.get("y", 0) / 100.0
+                vel = data.get("vel", 0)
+                tot_dist = data.get("tot_dist", 0)
+
+                # RSSI values for nodes A to M
+                rssi_values = {key: data.get(key, -120) for key in "ABCDEFGHIJKLM"}
+
+                # Debug  
+                print(f"RSSI Values: {rssi_values}")
+
+                # Send data  
+                for node, rssi in rssi_values.items():
+                    self.send_to_influx(node, rssi, vel, tot_dist)
+
+                return x, y
+
             except Exception as e:
                 print(f"Serial error: {e}")
                 return 0, 0
@@ -179,15 +177,11 @@ class TrackingController:
 
         self.view.update_labels(self.model.get_grid())
 
-        self.anim = animation.FuncAnimation(self.view.get_figure(), self.update, interval=500, cache_frame_data=False)
+        self.anim = animation.FuncAnimation(self.view.get_figure(), self.update, interval=100, cache_frame_data=False)
 
         self.ax_button = self.view.fig.add_axes([0.4, 0.05, 0.2, 0.075])
         self.btn = Button(self.ax_button, 'Switch Grid')
         self.btn.on_clicked(self.toggle_grid)
-
-        # Start sending fake data in a separate thread if simulation is enabled
-        if simulate:
-            threading.Thread(target=self.model.send_fake_data, daemon=True).start()
 
     def update(self, frame):
         x, y = self.model.get_position()
@@ -199,7 +193,5 @@ class TrackingController:
 
 # ---------------- Main ----------------
 if __name__ == "__main__":
-    app = TrackingController(simulate=True)#simulate=False)
+    app = TrackingController(simulate=False)
     plt.show()
-
-
