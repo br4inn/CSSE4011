@@ -1243,13 +1243,4 @@ zephyr_udc0: &usbd {
  status = "okay";
 };
 # 0 "<command-line>" 2
-# 1 "/home/brain/repo/mycode/apps/Csse4011-Proj/task1/boards/nrf52840dk_nrf52840.overlay" 1
-/ {
-    hc_sr04: hc_sr04 {
-        compatible = "hc-sr04";
-        trigger-gpios = <&gpio0 13 (0 << 0)>;
-        echo-gpios = <&gpio0 15 (0 << 0)>;
-    };
-};
-# 0 "<command-line>" 2
 # 1 "/home/brain/repo/zephyr/misc/empty_file.c"

@@ -1,4 +1,4 @@
-# Install script for directory: /home/brain/repo/zephyr/drivers/sensor/espressif
+# Install script for directory: /home/brain/repo/zephyr/subsys/shell/backends
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

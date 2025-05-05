@@ -1,4 +1,4 @@
-# Install script for directory: /home/brain/repo/zephyr/drivers/sensor/nordic
+# Install script for directory: /home/brain/repo/zephyr/subsys/shell/modules
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/brain/repo/build/zephyr/drivers/sensor/nordic/temp/cmake_install.cmake")
+  include("/home/brain/repo/build/zephyr/subsys/shell/modules/kernel_service/cmake_install.cmake")
 endif()
 

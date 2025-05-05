@@ -9,7 +9,7 @@ events:
       - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:2 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
     message: |
       The target system is: Generic - 4.1.0 - arm
       The host system is: Linux - 5.15.167.4-microsoft-standard-WSL2 - x86_64
@@ -23,7 +23,7 @@ events:
       - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:2 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
       Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
@@ -47,7 +47,7 @@ events:
       - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:2 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
@@ -73,7 +73,7 @@ events:
       - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:2 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
       Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
@@ -97,7 +97,7 @@ events:
       - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:2 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /home/brain/zephyr_install/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
@@ -122,7 +122,7 @@ events:
       - "/home/brain/repo/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
       - "/home/brain/repo/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:2 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
       arm-zephyr-eabi-gcc (Zephyr SDK 0.17.0) 12.2.0

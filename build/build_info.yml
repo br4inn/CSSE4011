@@ -1,7 +1,7 @@
 cmake:
   application:
-    configuration-dir: /home/brain/repo/mycode/apps/Csse4011-Proj/task1
-    source-dir: /home/brain/repo/mycode/apps/Csse4011-Proj/task1
+    configuration-dir: /home/brain/repo/mycode/apps/prac3/basenode
+    source-dir: /home/brain/repo/mycode/apps/prac3/basenode
   board:
     name: nrf52840dk
     path:
@@ -13,7 +13,6 @@ cmake:
      - /home/brain/repo/zephyr/dts/bindings
     files:
      - /home/brain/repo/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts
-     - /home/brain/repo/mycode/apps/Csse4011-Proj/task1/boards/nrf52840dk_nrf52840.overlay
     include-dirs:
      - /home/brain/repo/modules/hal/atmel/include
      - /home/brain/repo/modules/hal/gigadevice/include
@@ -35,14 +34,12 @@ cmake:
      - /home/brain/repo/zephyr/dts/arm
      - /home/brain/repo/zephyr/dts/arc
      - /home/brain/repo/zephyr/dts
-    user-files:
-     - /home/brain/repo/mycode/apps/Csse4011-Proj/task1/boards/nrf52840dk_nrf52840.overlay
   kconfig:
     files:
      - /home/brain/repo/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840_defconfig
-     - /home/brain/repo/mycode/apps/Csse4011-Proj/task1/prj.conf
+     - /home/brain/repo/mycode/apps/prac3/basenode/prj.conf
     user-files:
-     - /home/brain/repo/mycode/apps/Csse4011-Proj/task1/prj.conf
+     - /home/brain/repo/mycode/apps/prac3/basenode/prj.conf
   toolchain:
     name: zephyr
     path: /home/brain/zephyr_install/zephyr-sdk-0.17.0
@@ -54,6 +51,6 @@ cmake:
     zephyr-base: /home/brain/repo/zephyr
 version: 0.1.0
 west:
-  command: /home/brain/zephyr_install/env/bin/west build -b nrf52840dk/nrf52840 mycode/apps/Csse4011-Proj/task1 --pristine=always
+  command: /home/brain/zephyr_install/env/bin/west build -b nrf52840dk/nrf52840 mycode/apps/prac3/basenode --pristine=always
   topdir: /home/brain/repo
   version: 1.3.0
