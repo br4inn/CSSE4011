@@ -1,0 +1,13 @@
+# Target labels
+ mobilenode
+# Source files and their labels
+/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/mobilenode
+/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/mobilenode.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/mobilenode-complete.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-build.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-configure.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-download.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-install.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-mkdir.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-patch.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-update.rule

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/mobilenode"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/mobilenode.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/CMakeFiles/mobilenode-complete.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-build.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-configure.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-download.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-install.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-mkdir.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-patch.rule"
+		},
+		{
+			"file" : "/home/brain/repo/build/_sysbuild/sysbuild/images/mobilenode-prefix/src/mobilenode-stamp/mobilenode-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"mobilenode"
+		],
+		"name" : "mobilenode"
+	}
+}

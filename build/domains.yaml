@@ -1,0 +1,10 @@
+default: mobilenode
+build_dir: /home/brain/repo/build
+domains:
+  - name: mobilenode
+    build_dir: /home/brain/repo/build/mobilenode
+  - name: mcuboot
+    build_dir: /home/brain/repo/build/mcuboot
+flash_order:
+  - mcuboot
+  - mobilenode

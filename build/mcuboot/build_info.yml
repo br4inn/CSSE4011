@@ -1,0 +1,62 @@
+cmake:
+  application:
+    configuration-dir: /home/brain/repo/bootloader/mcuboot/boot/zephyr
+    source-dir: /home/brain/repo/bootloader/mcuboot/boot/zephyr
+  board:
+    name: thingy52
+    path:
+     - /home/brain/repo/zephyr/boards/nordic/thingy52
+    qualifiers: nrf52832
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /home/brain/repo/zephyr/dts/bindings
+    files:
+     - /home/brain/repo/zephyr/boards/nordic/thingy52/thingy52_nrf52832.dts
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/app.overlay
+    include-dirs:
+     - /home/brain/repo/modules/hal/atmel/include
+     - /home/brain/repo/modules/hal/gigadevice/include
+     - /home/brain/repo/modules/hal/microchip/include
+     - /home/brain/repo/modules/hal/microchip/dts
+     - /home/brain/repo/modules/hal/nuvoton/dts
+     - /home/brain/repo/modules/hal/nxp/dts
+     - /home/brain/repo/modules/hal/stm32/dts
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/include
+     - /home/brain/repo/zephyr/include
+     - /home/brain/repo/zephyr/include/zephyr
+     - /home/brain/repo/zephyr/dts/common
+     - /home/brain/repo/zephyr/dts/x86
+     - /home/brain/repo/zephyr/dts/xtensa
+     - /home/brain/repo/zephyr/dts/sparc
+     - /home/brain/repo/zephyr/dts/riscv
+     - /home/brain/repo/zephyr/dts/posix
+     - /home/brain/repo/zephyr/dts/nios2
+     - /home/brain/repo/zephyr/dts/arm64
+     - /home/brain/repo/zephyr/dts/arm
+     - /home/brain/repo/zephyr/dts/arc
+     - /home/brain/repo/zephyr/dts
+    user-files:
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/app.overlay
+  kconfig:
+    extra-user-files:
+     - /home/brain/repo/mycode/apps/Salamis-Salmon/code/mycode/pf/mobilenode/sysbuild/mcuboot.conf
+    files:
+     - /home/brain/repo/zephyr/boards/nordic/thingy52/thingy52_nrf52832_defconfig
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/prj.conf
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/boards/thingy52_nrf52832.conf
+     - /home/brain/repo/mycode/apps/Salamis-Salmon/code/mycode/pf/mobilenode/sysbuild/mcuboot.conf
+     - /home/brain/repo/build/mcuboot/zephyr/.config.sysbuild
+    user-files:
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/prj.conf
+     - /home/brain/repo/bootloader/mcuboot/boot/zephyr/boards/thingy52_nrf52832.conf
+  toolchain:
+    name: zephyr
+    path: /home/brain/zephyr_install/zephyr-sdk-0.17.0
+  vendor-specific:
+    nordic:
+      svdfile: /home/brain/repo/modules/hal/nordic/nrfx/mdk/nrf52.svd
+  zephyr:
+    version: 4.1.0-rc2
+    zephyr-base: /home/brain/repo/zephyr
+version: 0.1.0

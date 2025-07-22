@@ -1,0 +1,13 @@
+# Target labels
+ mcuboot
+# Source files and their labels
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/CMakeFiles/mcuboot-complete.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-build.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-configure.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-download.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-install.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-mkdir.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-patch.rule
+/home/brain/repo/build/_sysbuild/sysbuild/images/bootloader/mcuboot-prefix/src/mcuboot-stamp/mcuboot-update.rule

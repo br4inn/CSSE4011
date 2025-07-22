@@ -1,0 +1,2 @@
+# Load board Kconfig descriptions.
+osource "/home/brain/repo/zephyr/boards/nordic/thingy52/Kconfig.thingy52"
