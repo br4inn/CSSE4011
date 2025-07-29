@@ -1,0 +1,50 @@
+
+&i2c2 {
+    hts221@5f {
+        compatible = "st,hts221";
+        reg = <0x5f>;
+        status = "okay";
+    };
+
+    lps22hb-press@5d {
+        compatible = "st,lps22hb-press";
+        reg = <0x5d>;
+        status = "okay";
+    };
+
+    
+};
+
+
+
+/ {
+	aliases {
+		rtc = &rtc;
+	};
+};
+
+&rtc {
+    status = "okay";
+};
+
+
+&i2c2 {
+    status = "okay";
+};
+
+ / {
+    aliases {
+        sw0 = &button_0;
+    };
+
+
+gpio_keys {
+    compatible = "gpio-keys";
+    button_0: button_0 {
+        label = "User Button";
+        gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
+        zephyr,code = <INPUT_KEY_0>;
+    };
+};
+ };
+ 
